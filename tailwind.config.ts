@@ -9,8 +9,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        "lg-primary": "#1E2132",
+        "lg-secondary": "#3E5253",
+        "lg-button": "#50AAB8",
+        "lg-text": "#F5CEAF",
+        "lg-link": "#E2B736",
+        "dr-primary": "#E2B736",
+        "dr-text": "#2A2A2A",
+        "dr-button": "#1E88A8",
+        "dr-link": "#D2A028",
+      },
+      fontFamily: {
+        playfairDisplay: ["var(--font-playfairDisplay)"],
+        lato: ["var(--font-lato)"],
       },
     },
   },
