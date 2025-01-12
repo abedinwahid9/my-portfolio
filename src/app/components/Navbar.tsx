@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import logo from "../../../public/assets/logo.png";
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface NavLink {
   id: number;
@@ -57,6 +57,15 @@ const Navbar = () => {
       },
     }),
   };
+
+  // useEffect(() => {
+  //   const body: HTMLHtmlElement | null = document.querySelector("html");
+  //   if (open) {
+  //     body.addEventListener("click", () => {
+  //       setOpen(!open);
+  //     });
+  //   }
+  // }, [open]);
 
   return (
     <header className="py-5 px-5 ">
@@ -117,15 +126,19 @@ const Navbar = () => {
                     {navLink.map((item, index) => (
                       <motion.li
                         key={item.id}
+                        whileHover={{ scale: 1.05 }}
                         custom={index}
                         variants={itemVariants}
+                        className="text-lg-text text-xl font-medium capitalize font-playfairDisplay"
                       >
-                        <a
+                        <Link
                           href={item.link}
-                          className="text-lg-text text-xl font-medium capitalize font-playfairDisplay"
+                          className={` ${
+                            path === item.link ? "active" : "line-hover"
+                          }`}
                         >
                           {item.title}
-                        </a>
+                        </Link>
                       </motion.li>
                     ))}
                   </ul>
