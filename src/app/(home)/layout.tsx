@@ -7,10 +7,10 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className="max-w-[1440px]  mx-auto ">
+    <section className="max-w-[1440px]  mx-auto max-h-screen ">
       <Navbar />
       {children}
-    </div>
+    </section>
   );
 };
 

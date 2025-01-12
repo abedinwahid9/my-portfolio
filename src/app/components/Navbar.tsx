@@ -23,6 +23,7 @@ const Navbar = () => {
     { id: 5, title: "contact me", link: "/contact-me" },
   ];
 
+  // mobile navbar open close
   const containerVariants = {
     hidden: { height: 0 },
     visible: {
@@ -58,14 +59,22 @@ const Navbar = () => {
     }),
   };
 
-  // useEffect(() => {
-  //   const body: HTMLHtmlElement | null = document.querySelector("html");
-  //   if (open) {
-  //     body.addEventListener("click", () => {
-  //       setOpen(!open);
-  //     });
-  //   }
-  // }, [open]);
+  // window anywhere click navbar close
+  useEffect(() => {
+    const handleClickOutside = () => {
+      if (open) {
+        setOpen(false);
+      }
+    };
+
+    if (open) {
+      document.addEventListener("click", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [open]);
 
   return (
     <header className="py-5 px-5 ">
@@ -75,7 +84,7 @@ const Navbar = () => {
           <ul className="md:flex hidden gap-5">
             {navLink?.map(({ id, title, link }) => (
               <motion.li
-                whileHover={{ scale: 1.05 }}
+                whileHover={path !== link ? { scale: 1.05 } : {}}
                 key={id}
                 className="text-lg-text text-xl  font-medium capitalize font-playfairDisplay"
               >
