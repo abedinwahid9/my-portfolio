@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${playfairDisplay.variable} ${lato.className} h-screen w-full bg-gradient-to-tr from-lg-secondary  to-lg-primary to-45%  bg-no-repeat `}
+        className={`${playfairDisplay.variable} ${lato.className} h-screen w-full bg-gradient-to-tr from-lg-secondary to-lg-primary to-45%  bg-no-repeat `}
       >
         {children}
       </body>
