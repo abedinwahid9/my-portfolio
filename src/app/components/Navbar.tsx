@@ -59,6 +59,37 @@ const Navbar = () => {
     }),
   };
 
+  // nav link animated top to bottom
+  const navVariants = {
+    hidden: {
+      y: -100,
+    },
+    visible: (index: number) => ({
+      y: 0,
+      transition: {
+        delay: index * 0.1,
+        duration: 0.5,
+        ease: "easeIn",
+        type: "tween",
+      },
+    }),
+  };
+
+  // logo animated
+  const logoVariants = {
+    hidden: {
+      transform: "scale(0)",
+    },
+    visible: {
+      transform: "scale(1)",
+      transformOrigin: "left center right",
+      ease: "easeIn",
+      duration: 0.5,
+      type: "spring",
+      stiffness: 300,
+    },
+  };
+
   // window anywhere click navbar close
   useEffect(() => {
     const handleClickOutside = () => {
@@ -86,6 +117,10 @@ const Navbar = () => {
               <motion.li
                 whileHover={path !== link ? { scale: 1.05 } : {}}
                 key={id}
+                variants={navVariants}
+                initial="hidden"
+                animate="visible"
+                custom={id}
                 className="text-lg-text text-xl  font-medium capitalize font-playfairDisplay"
               >
                 <Link
@@ -98,10 +133,76 @@ const Navbar = () => {
             ))}
           </ul>
           <button
-            className="text-white flex md:hidden"
+            className="text-lg-button w-10 h-10 flex md:hidden"
             onClick={() => setOpen(!open)}
           >
-            click me
+            <motion.svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              animate={{
+                scale: [1, 1.05, 1],
+                rotate: [0, 2, -2, 0],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              {/* Top line */}
+              <motion.path
+                d="M3 6H21"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                animate={{
+                  x: [0, 2, -2, 0],
+                }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+
+              {/* Middle line */}
+              <motion.path
+                d="M3 12H21"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                animate={{
+                  x: [0, -2, 2, 0],
+                }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+
+              {/* Bottom line */}
+              <motion.path
+                d="M3 18H21"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                animate={{
+                  x: [0, 2, -2, 0],
+                }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+            </motion.svg>
           </button>
           {/* mobile nav */}
           <AnimatePresence>
@@ -113,14 +214,7 @@ const Navbar = () => {
                 variants={containerVariants}
                 className="fixed  md:hidden top-0 left-0 right-0 z-40 overflow-hidden"
               >
-                <div className="flex justify-end">
-                  <button
-                    className="text-white "
-                    onClick={() => setOpen(!open)}
-                  >
-                    click me
-                  </button>
-                </div>
+                <div className="flex justify-end"></div>
                 <motion.nav
                   variants={paperVariants}
                   className="bg-lg-primary shadow-lg"
@@ -132,10 +226,62 @@ const Navbar = () => {
                   }}
                 >
                   <ul className="flex flex-col items-center pb-10 pt-3 space-y-4">
+                    <button
+                      className="text-lg-button w-10 h-10"
+                      onClick={() => setOpen(!open)}
+                    >
+                      <motion.svg
+                        width="100%"
+                        height="100%"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        {/* First Diagonal Line (Moving between cross and straight line) */}
+                        <motion.path
+                          d="M18 6L6 18"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          initial={{ pathLength: 0 }}
+                          animate={{
+                            pathLength: [0, 1, 0], // Animate from 0 (no line) to 1 (full line) and back to 0
+                          }}
+                          transition={{
+                            duration: 1.5,
+                            delay: 0.5, // Start a little later to sync with the horizontal line
+                            repeat: Infinity,
+                            repeatType: "loop",
+                            ease: "easeInOut",
+                          }}
+                        />
+
+                        {/* Second Diagonal Line (Moving between cross and straight line) */}
+                        <motion.path
+                          d="M6 6L18 18"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          initial={{ pathLength: 0 }}
+                          animate={{
+                            pathLength: [0, 1, 0], // Animate from 0 (no line) to 1 (full line) and back to 0
+                          }}
+                          transition={{
+                            duration: 1.5,
+                            delay: 0.5, // Sync with the first diagonal line
+                            repeat: Infinity,
+                            repeatType: "loop",
+                            ease: "easeInOut",
+                          }}
+                        />
+                      </motion.svg>
+                    </button>
                     {navLink.map((item, index) => (
                       <motion.li
                         key={item.id}
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={path !== item.link ? { scale: 1.05 } : {}}
                         custom={index}
                         variants={itemVariants}
                         className="text-lg-text text-xl font-medium capitalize font-playfairDisplay"
@@ -156,12 +302,14 @@ const Navbar = () => {
             )}
           </AnimatePresence>
         </div>
-
-        <Image
-          className="w-36 h-full md:order-2 order-1"
-          src={logo}
-          alt="logo"
-        />
+        <motion.div
+          className="md:order-2 order-1"
+          variants={logoVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <Image className="w-36 h-full " src={logo} alt="logo" />
+        </motion.div>
       </nav>
     </header>
   );
