@@ -5,6 +5,13 @@ import { usePathname } from "next/navigation";
 import logo from "../../../public/assets/logo.png";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import {
+  containerVariants,
+  itemVariants,
+  navVariants,
+  paperVariants,
+} from "./animation/navAllAnimation";
+import { logoVariants } from "./animation/mainLogo";
 
 interface NavLink {
   id: number;
@@ -22,73 +29,6 @@ const Navbar = () => {
     { id: 4, title: "skills", link: "/skills" },
     { id: 5, title: "contact me", link: "/contact-me" },
   ];
-
-  // mobile navbar open close
-  const containerVariants = {
-    hidden: { height: 0 },
-    visible: {
-      height: "auto",
-      transition: {
-        duration: 0.5,
-        ease: [0.22, 1, 0.36, 1],
-      },
-    },
-  };
-
-  const paperVariants = {
-    hidden: { scaleY: 0, originY: 0 },
-    visible: {
-      scaleY: 1,
-      transition: {
-        duration: 0.5,
-        ease: [0.22, 1, 0.36, 1],
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.1 + 0.3,
-        duration: 0.3,
-        ease: "easeOut",
-      },
-    }),
-  };
-
-  // nav link animated top to bottom
-  const navVariants = {
-    hidden: {
-      y: -100,
-    },
-    visible: (index: number) => ({
-      y: 0,
-      transition: {
-        delay: index * 0.1,
-        duration: 0.5,
-        ease: "easeIn",
-        type: "tween",
-      },
-    }),
-  };
-
-  // logo animated
-  const logoVariants = {
-    hidden: {
-      transform: "scale(0)",
-    },
-    visible: {
-      transform: "scale(1)",
-      transformOrigin: "left center right",
-      ease: "easeIn",
-      duration: 0.5,
-      type: "spring",
-      stiffness: 300,
-    },
-  };
 
   // window anywhere click navbar close
   useEffect(() => {

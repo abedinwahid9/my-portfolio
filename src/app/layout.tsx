@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { lato, playfairDisplay } from "@/fonts/fonts";
+import { ThemeProvider } from "next-themes";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,11 +14,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body
         className={`${playfairDisplay.variable} ${lato.className} h-screen w-full bg-gradient-to-tr from-lg-secondary to-lg-primary to-45%  bg-no-repeat `}
       >
-        {children}
+        <ThemeProvider attribute="data-mode" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
