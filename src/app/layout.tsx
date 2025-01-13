@@ -14,9 +14,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body
-        className={`${playfairDisplay.variable} ${lato.className} h-screen w-full bg-gradient-to-tr from-lg-secondary to-lg-primary to-45%  bg-no-repeat `}
+        className={`${playfairDisplay.variable} ${lato.className} h-screen w-full bg-gradient-to-tr dark:from-lg-secondary from-dr-button dark:to-lg-primary to-dr-primary to-45%  bg-no-repeat `}
       >
         <ThemeProvider attribute="data-mode" defaultTheme="system" enableSystem>
           {children}

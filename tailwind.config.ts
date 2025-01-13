@@ -6,7 +6,7 @@ export default {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: "selector",
+  darkMode: ["selector", '[data-mode="dark"]'],
   theme: {
     extend: {
       colors: {
@@ -15,7 +15,7 @@ export default {
         "lg-button": "#50AAB8",
         "lg-text": "#F5CEAF",
         "lg-link": "#E2B736",
-        "dr-primary": "#E2B736",
+        "dr-primary": "#F9F9F9",
         "dr-text": "#2A2A2A",
         "dr-button": "#1E88A8",
         "dr-link": "#D2A028",

@@ -12,6 +12,7 @@ import {
   paperVariants,
 } from "./animation/navAllAnimation";
 import { logoVariants } from "./animation/mainLogo";
+import Theme from "./Theme/Theme";
 
 interface NavLink {
   id: number;
@@ -61,7 +62,7 @@ const Navbar = () => {
                 initial="hidden"
                 animate="visible"
                 custom={id}
-                className="text-lg-text text-xl  font-medium capitalize font-playfairDisplay"
+                className="dark:text-lg-text text-dr-text text-xl  font-medium capitalize font-playfairDisplay"
               >
                 <Link
                   className={` ${path === link ? "active" : "line-hover"}`}
@@ -241,12 +242,14 @@ const Navbar = () => {
               </motion.div>
             )}
           </AnimatePresence>
+          <Theme />
         </div>
+
         <motion.div
-          className="md:order-2 order-1"
           variants={logoVariants}
           initial="hidden"
           animate="visible"
+          className="md:order-2 order-1 "
         >
           <Image className="w-36 h-full " src={logo} alt="logo" />
         </motion.div>
