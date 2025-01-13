@@ -6,6 +6,9 @@ body,
 html {
   overflow: hidden;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+  height: 100%;
+  overflow: auto;
 }
 
 .active {
@@ -38,7 +41,7 @@ html {
   left: 0;
   background-color: #e2b736;
   transform-origin: left center right;
-  transition: transform 0.25s ease-out;
+  transition: transform 0.5s ease-out;
 }
 
 .line-hover:hover::after {
