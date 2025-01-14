@@ -5,12 +5,7 @@ import { FiLinkedin } from "react-icons/fi";
 import { FiFacebook } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
-
-interface arr {
-  id: number;
-  link: string;
-  icon: React.ElementType;
-}
+import { motion } from "framer-motion";
 
 const SocialLinks: React.FC = () => {
   // Array of links with icon components
@@ -28,20 +23,24 @@ const SocialLinks: React.FC = () => {
       icon: FiFacebook,
     },
     { id: 4, link: "https://wa.me/+8801716893200", icon: FaWhatsapp },
-    { id: 4, link: "mailto:abedinwahid9@gmail.com", icon: MdAlternateEmail },
+    { id: 5, link: "mailto:abedinwahid9@gmail.com", icon: MdAlternateEmail },
   ];
 
+  // icon shadow animation
+
+  //
+
   return (
-    <div className="py-5 flex gap-2">
+    <div className="md:py-5 py-2 flex gap-2">
       {links.map(({ id, link, icon: Icon }) => (
-        <div
+        <motion.div
           key={id}
-          className="w-8 h-8 dark:text-lg-button text-dr-button drop-shadow-[0px_0px_10px_rgba(30,136,168,0.8)] hover:drop-shadow-[0px_0px_10px_rgba(226,183,54,0.8)]"
+          className="md:w-8 md:h-8 w-5 h-5 dark:text-lg-button text-dr-button  drop-shadow-[0px_0px_10px_rgba(30,136,168,0.8)] hover:drop-shadow-[0px_0px_39px_rgba(226,138,54,0.9)]"
         >
           <Link target="_blank" href={link}>
             <Icon className="w-full h-full" />
           </Link>
-        </div>
+        </motion.div>
       ))}
     </div>
   );

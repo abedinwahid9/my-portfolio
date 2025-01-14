@@ -1,6 +1,8 @@
 import Image from "next/image";
 import profile from "../../../assets/my.png";
 import SocialLinks from "../share/SocialLinks";
+import AnimatedBtn from "../share/AnimatedBtn";
+import { FiAlignCenter } from "react-icons/fi";
 
 const Main: React.FC = () => {
   const text = "<> Coding with Creativity, Passion, and Style </>";
@@ -20,6 +22,20 @@ const Main: React.FC = () => {
           </p>
         </div>
         <SocialLinks />
+        <div className="flex md:gap-5 gap-3 py-2">
+          <AnimatedBtn
+            title="resume"
+            width="md:w-2/3 w-1/2"
+            icon={<FiAlignCenter />}
+            show={true}
+          />
+          <AnimatedBtn
+            title="about me"
+            width="md:w-1/3 w-1/2"
+            icon={<FiAlignCenter />}
+            show={true}
+          />
+        </div>
       </div>
       <div className="lg:w-[420px] lg:order-2 order-1  lg:h-[420px] sm:w-72 w-44 sm:h-72 h-44 relative">
         <Image
