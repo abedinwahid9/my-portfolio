@@ -1,9 +1,8 @@
-import Image from "next/image";
-import profile from "../../../assets/my.png";
 import SocialLinks from "../share/SocialLinks";
 import AnimatedBtn from "../share/AnimatedBtn";
 import { FiAlignCenter } from "react-icons/fi";
 import Name from "./Name";
+import Profile from "./Profile";
 
 const Main: React.FC = () => {
   const text = "<> Coding with Creativity, Passion, and Style </>";
@@ -37,9 +36,7 @@ const Main: React.FC = () => {
             />
           </div>
         </div>
-        <div className="lg:w-[380px] rounded-2xl overflow-hidden lg:order-2 order-1  lg:h-[380px] sm:w-72 w-44 sm:h-72 h-44 relative  shadow-[0px_0px_60px_5px_#50AAB8]">
-          <Image src={profile} alt="profile" className="object-cover" fill />
-        </div>
+        <Profile />
       </div>
     </div>
   );

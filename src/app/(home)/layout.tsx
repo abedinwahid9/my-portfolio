@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import Navbar from "../components/Navbar";
+import Loading from "../components/Loading";
 
 interface LayoutProps {
   children: ReactNode;
@@ -7,10 +8,12 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <section className="max-w-[1440px]  mx-auto   ">
-      <Navbar />
-      {children}
-    </section>
+    <Loading>
+      <section className="max-w-[1440px]  mx-auto   ">
+        <Navbar />
+        {children}
+      </section>
+    </Loading>
   );
 };
 
