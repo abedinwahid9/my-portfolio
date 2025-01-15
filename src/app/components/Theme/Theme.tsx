@@ -1,8 +1,10 @@
-import { useTheme } from "next-themes";
-// import { SunIcon, MoonIcon } from "./Icons";
-import { motion } from "framer-motion";
+"use client";
 
-export const SunIcon = () => (
+import { useTheme } from "next-themes";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+
+const SunIcon = () => (
   <motion.svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -29,7 +31,7 @@ export const SunIcon = () => (
   </motion.svg>
 );
 
-export const MoonIcon = () => (
+const MoonIcon = () => (
   <motion.svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -49,15 +51,20 @@ export const MoonIcon = () => (
 );
 
 const Theme: React.FC = () => {
-  const { theme, setTheme, resolvedTheme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
+  const [mount, setMount] = useState<boolean>(false);
 
   // Handle theme toggle
   const handleTheme = () => {
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
   };
 
+  useEffect(() => {
+    setMount(true);
+  }, []);
+
   // Render only when theme is resolved
-  if (!theme) return null;
+  if (!mount) return null;
 
   return (
     <motion.button

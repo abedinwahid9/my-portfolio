@@ -1,4 +1,5 @@
-import { delay, motion, useAnimate } from "framer-motion";
+"use client";
+import { motion } from "framer-motion";
 import { btnVariants, shadowVariants } from "../animation/animatedBtn";
 import { useState } from "react";
 
