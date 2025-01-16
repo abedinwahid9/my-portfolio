@@ -3,6 +3,7 @@ import AnimatedBtn from "../share/AnimatedBtn";
 import { FiAlignCenter } from "react-icons/fi";
 import Name from "./Name";
 import Profile from "./Profile";
+import TypeWriting from "../autoTyping/TypeWriting";
 
 const Main: React.FC = () => {
   const text = "<> Coding with Creativity, Passion, and Style </>";
@@ -12,6 +13,7 @@ const Main: React.FC = () => {
       <div className="xl:px-10 md:px-5 px-3 w-full h-full gap-5 flex lg:flex-row flex-col justify-between items-center ">
         <div className="lg:order-1 order-2 ">
           <div>
+            <TypeWriting />
             <Name />
             <h2 className="dark:text-lg-text text-dr-text font-bold text-[10px] sm:text-base md:text-xl">
               Front-end Developer | MERN stack | Programming Enthusiast
