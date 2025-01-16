@@ -7,9 +7,15 @@ import { FaWhatsapp } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
 import { motion } from "framer-motion";
 
+interface LinkItem {
+  id: number;
+  link: string;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+}
+
 const SocialLinks: React.FC = () => {
   // Array of links with icon components
-  const links: arr[] = [
+  const links: LinkItem[] = [
     { id: 1, link: "https://github.com/abedinwahid9", icon: FiGithub },
     {
       id: 2,

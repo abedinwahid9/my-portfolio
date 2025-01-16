@@ -1,6 +1,6 @@
 "use client";
 
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Name: React.FC = () => {
   const name = "Abedin Wahid";
@@ -11,7 +11,7 @@ const Name: React.FC = () => {
       y: -150,
       opacity: 0,
     },
-    visible: (index) => ({
+    visible: (index: number) => ({
       y: 0,
       opacity: 1,
       transition: {
@@ -25,7 +25,7 @@ const Name: React.FC = () => {
 
   return (
     <h2 className="relative capitalize dark:text-lg-button text-dr-button md:text-2xl sm:text-xl flex gap-2 text-md font-bold">
-      <span> Hi, I'm</span>
+      <span> Hi, I&apos;m</span>
       <div className="flex gap-2">
         {nameSplit?.map((str, i) => {
           return (

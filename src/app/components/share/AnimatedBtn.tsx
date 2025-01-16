@@ -1,21 +1,23 @@
 "use client";
-import { motion } from "framer-motion";
+
+import { motion, Variants } from "framer-motion";
 import { btnVariants, shadowVariants } from "../animation/animatedBtn";
 import { useState } from "react";
 
+// Props for the Animated Button component
 interface BtnProps {
   title: string;
   width: string;
-  icon?: React.ReactNode;
-  show?: boolean;
+  icon?: React.ReactNode; // Optional React node for an icon
+  show?: boolean; // Optional boolean to control the shadow display
 }
 
 const AnimatedBtn: React.FC<BtnProps> = ({ title, width, icon, show }) => {
-  const textSplit: string[] = title?.split("");
-  const [hover, setHover] = useState<boolean>(false);
+  const textSplit: string[] = title?.split(""); // Split the title into an array of characters
+  const [hover, setHover] = useState<boolean>(false); // State to track hover status
 
   // Text animation variants with stagger effect
-  const textVariants = {
+  const textVariants: Variants = {
     initial: {
       y: 0,
     },
@@ -36,7 +38,6 @@ const AnimatedBtn: React.FC<BtnProps> = ({ title, width, icon, show }) => {
         duration: 0.3,
         delay: i * 0.2,
         ease: [0.19, 1, 0.22, 1],
-        repeatType: "reverse",
         type: "spring",
         visualDuration: 0.5,
         bounce: 0.25,
@@ -59,7 +60,7 @@ const AnimatedBtn: React.FC<BtnProps> = ({ title, width, icon, show }) => {
         }}
         className={`dark:bg-lg-button flex gap-2 justify-center items-center font-semibold bg-dr-button md:py-2 py-1 md:px-5 px-2 md:text-lg text-sm capitalize text-lg-text dark:text-dr-text rounded-sm`}
       >
-        <motion.div className="block  h-8 overflow-hidden">
+        <motion.div className="block h-8 overflow-hidden">
           {textSplit?.map((str, i) => (
             <motion.span
               key={`${str}-${i}`}
