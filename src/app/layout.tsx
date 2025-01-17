@@ -1,13 +1,6 @@
-import type { Metadata } from "next";
 import "./globals.css";
 import { lato, playfairDisplay } from "@/fonts/fonts";
 import { ThemeProvider } from "next-themes";
-
-export const metadata: Metadata = {
-  title: "Abedin Wahid",
-  description:
-    "this is abedin wahid portfolio.Front-end Developer | MERN stack | Programming Enthusiast",
-};
 
 export default function RootLayout({
   children,
