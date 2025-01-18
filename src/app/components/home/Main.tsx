@@ -4,12 +4,13 @@ import { FiAlignCenter } from "react-icons/fi";
 import Name from "./Name";
 import Profile from "./Profile";
 import TypeWriting from "../autoTyping/TypeWriting";
+import Marquee from "../Marquee/Marquee";
 
 const Main: React.FC = () => {
   const text = "<> Coding with Creativity, Passion, and Style </>";
 
   return (
-    <div className="max-w-[1440px] mx-auto w-full">
+    <div className="max-w-[1440px] mx-auto w-full ">
       <div className="xl:px-10 md:px-5 px-3 w-full h-full gap-5 flex lg:flex-row flex-col justify-between items-center ">
         <div className="lg:order-1 order-2 ">
           <div>
@@ -39,6 +40,18 @@ const Main: React.FC = () => {
           </div>
         </div>
         <Profile />
+      </div>
+      <div className="py-20">
+        <Marquee>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus,
+            consectetur!
+          </p>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus,
+            consectetur!
+          </p>
+        </Marquee>
       </div>
     </div>
   );
