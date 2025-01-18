@@ -1,3 +1,4 @@
+"use client";
 import SocialLinks from "../share/SocialLinks";
 import AnimatedBtn from "../share/AnimatedBtn";
 import { FiAlignCenter } from "react-icons/fi";
@@ -5,12 +6,57 @@ import Name from "./Name";
 import Profile from "./Profile";
 import TypeWriting from "../autoTyping/TypeWriting";
 import Marquee from "../Marquee/Marquee";
+import js from "../../../../public/icons/icons8-javascript-480.png";
+import html from "../../../../public/icons/icons8-html-480.png";
+import css from "../../../../public/icons/icons8-css3-480.png";
+import bootstrap from "../../../../public/icons/icons8-bootstrap-480.png";
+import express from "../../../../public/icons/icons8-express-js-500.png";
+import tailwind from "../../../../public/icons/icons8-tailwindcss-480.png";
+import mongoose from "../../../../public/icons/icons8-mongoose-480.png";
+import Image from "next/image";
+
+interface SkillLogo {
+  id: number;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  image?: any;
+}
 
 const Main: React.FC = () => {
   const text = "<> Coding with Creativity, Passion, and Style </>";
 
+  const skillLogo: SkillLogo[] = [
+    {
+      id: 1,
+      image: html,
+    },
+    {
+      id: 2,
+      image: css,
+    },
+    {
+      id: 3,
+      image: js,
+    },
+    {
+      id: 4,
+      image: bootstrap,
+    },
+    {
+      id: 5,
+      image: tailwind,
+    },
+    {
+      id: 6,
+      image: express,
+    },
+    {
+      id: 7,
+      image: mongoose,
+    },
+  ];
+
   return (
-    <div className="max-w-[1440px] mx-auto w-full ">
+    <div className="max-w-[1440px] mx-auto w-full h-full flex flex-col gap-14 ">
       <div className="xl:px-10 md:px-5 px-3 w-full h-full gap-5 flex lg:flex-row flex-col justify-between items-center ">
         <div className="lg:order-1 order-2 ">
           <div>
@@ -41,16 +87,21 @@ const Main: React.FC = () => {
         </div>
         <Profile />
       </div>
-      <div className="py-20">
+      <div>
         <Marquee>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus,
-            consectetur!
-          </p>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus,
-            consectetur!
-          </p>
+          {skillLogo?.map(({ id, image }) => {
+            return (
+              <div key={id} className="w-24 h-24">
+                <Image
+                  src={image}
+                  alt="js"
+                  className="object-cover w-full h-full"
+                  width={0}
+                  height={0}
+                />
+              </div>
+            );
+          })}
         </Marquee>
       </div>
     </div>

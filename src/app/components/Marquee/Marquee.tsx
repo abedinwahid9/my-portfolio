@@ -20,7 +20,7 @@ const Marquee: React.FC<MarqueeProps> = ({ children }) => {
   }, [children]); // Recalculate if children change
 
   return (
-    <div className="overflow-hidden whitespace-nowrap relative">
+    <div className="overflow-hidden relative ">
       <motion.div
         className="flex gap-5"
         initial={{ x: 0 }}
