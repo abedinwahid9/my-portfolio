@@ -71,7 +71,7 @@ const Main: React.FC = () => {
   ];
 
   return (
-    <div className="w-full pt-[80px] flex flex-col lg:gap-14 gap-5 ">
+    <div className="w-full  flex flex-col lg:gap-14 gap-5 ">
       <div className="xl:px-10 md:px-5 px-3  gap-5 flex lg:flex-row flex-col justify-between items-center ">
         <div className="lg:order-1 order-2 ">
           <div>
