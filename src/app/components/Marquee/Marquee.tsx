@@ -14,40 +14,40 @@ const Marquee: React.FC<MarqueeProps> = ({
   gap = 20,
 }) => {
   const marqueeRef = useRef<HTMLDivElement>(null);
-  const [marqueeWidth, setMarqueeWidth] = useState<number>(0);
+  const [contentWidth, setContentWidth] = useState<number>(0);
 
   // Measure the width of the marquee content
   useEffect(() => {
     if (marqueeRef.current) {
       const width = marqueeRef.current.getBoundingClientRect().width;
-      setMarqueeWidth(width);
+      setContentWidth(width);
     }
   }, [children]); // Recalculate if children change
 
-  const animationDuration = marqueeWidth ? marqueeWidth / speed : 0;
+  const animationDuration = contentWidth ? (contentWidth + gap) / speed : 0;
 
   return (
     <div className="overflow-hidden whitespace-nowrap relative w-full">
       <motion.div
-        className="flex gap-14"
+        className="flex "
         initial={{ x: 0 }}
-        animate={{
-          x: -marqueeWidth - gap,
-        }}
+        animate={{ x: -(contentWidth + gap) }}
         transition={{
           repeat: Infinity,
           duration: animationDuration,
           ease: "linear",
         }}
-        style={{ width: "100%" }}
+        style={{ display: "inline-flex" }}
       >
+        {/* Repeated content */}
         <div
           ref={marqueeRef}
-          className="flex gap-14 flex-[0_0_auto] flex-shrink-0 justify-center items-center"
+          className="flex gap-14 flex-shrink-0"
+          style={{ marginRight: gap }}
         >
           {children}
         </div>
-        <div className="flex gap-14 flex-[0_0_auto] flex-shrink-0 justify-center items-center">
+        <div className="flex gap-14 flex-shrink-0" style={{ marginRight: gap }}>
           {children}
         </div>
       </motion.div>

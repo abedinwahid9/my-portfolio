@@ -1,60 +1,48 @@
 "use client";
-
-import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
+// import React, { useRef, useEffect, useState } from "react";
 
 interface MarqueeProps {
   children: React.ReactNode;
-  speed?: number;
-  direction?: "left" | "right";
-  pauseOnHover?: boolean;
+  // speed?: number;
+  // gap?: number;
 }
 
-export const Marquee: React.FC<MarqueeProps> = ({
+const Marquee: React.FC<MarqueeProps> = ({
   children,
-  speed = 20,
-  direction = "left",
-  pauseOnHover = true,
+  // speed = 50,
+  // gap = 20,
 }) => {
-  const [contentWidth, setContentWidth] = useState(0);
-  const contentRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (contentRef.current) {
-      setContentWidth(contentRef.current.offsetWidth);
-    }
-  }, [children]);
-
   return (
-    <div className="overflow-hidden whitespace-nowrap">
+    <div className="overflow-hidden whitespace-nowrap relative w-full">
       <motion.div
-        className="inline-block"
+        className="flex gap-10 relative   w-full"
+        initial={{ x: 0 }}
         animate={{
-          x: direction === "left" ? [-contentWidth, 0] : [0, -contentWidth],
+          x: "-100%",
         }}
         transition={{
-          duration: contentWidth / speed,
           repeat: Infinity,
+          duration: 30,
           ease: "linear",
         }}
-        whileHover={pauseOnHover ? { animationPlayState: "paused" } : undefined}
+        style={{ width: "100%" }}
       >
-        <div ref={contentRef}>{children}</div>
-      </motion.div>
-      <motion.div
-        className="inline-block"
-        animate={{
-          x: direction === "left" ? [0, -contentWidth] : [-contentWidth, 0],
-        }}
-        transition={{
-          duration: contentWidth / speed,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-        whileHover={pauseOnHover ? { animationPlayState: "paused" } : undefined}
-      >
-        <div>{children}</div>
+        <div
+          // ref={marqueeRef}
+          className="flex  flex-nowrap  w-full gap-14"
+        >
+          {children}
+        </div>
+        <div
+          // ref={marqueeRef}
+          className="flex flex-nowrap w-full gap-14"
+        >
+          {children}
+        </div>
       </motion.div>
     </div>
   );
 };
+
+export default Marquee;
