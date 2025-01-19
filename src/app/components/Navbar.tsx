@@ -49,8 +49,8 @@ const Navbar = () => {
   }, [open]);
 
   return (
-    <header className="py-5 xl:px-10 md:px-5 px-3 ">
-      <nav className="flex justify-between items-center overflow-hidden">
+    <header className="py-5 xl:px-10 md:px-5 px-3 fixed w-full z-50">
+      <nav className="max-w-[1440px]  mx-auto flex justify-between items-center overflow-hidden">
         <div className="order-2 md:order-1 flex justify-center items-center gap-4">
           <Theme />{" "}
           <div>

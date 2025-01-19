@@ -18,9 +18,7 @@ const Loading = ({ children }: LayoutProps) => {
   }, []);
 
   return (
-    <div>
-      {isLoading ? <p className="white">Loading......</p> : <>{children}</>}
-    </div>
+    <>{isLoading ? <p className="white">Loading......</p> : <>{children}</>}</>
   );
 };
 

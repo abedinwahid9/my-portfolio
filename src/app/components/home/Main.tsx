@@ -1,4 +1,3 @@
-"use client";
 import SocialLinks from "../share/SocialLinks";
 import AnimatedBtn from "../share/AnimatedBtn";
 import { FiAlignCenter } from "react-icons/fi";
@@ -53,10 +52,26 @@ const Main: React.FC = () => {
       id: 7,
       image: mongoose,
     },
+    {
+      id: 8,
+      image: mongoose,
+    },
+    {
+      id: 9,
+      image: mongoose,
+    },
+    {
+      id: 10,
+      image: mongoose,
+    },
+    {
+      id: 11,
+      image: js,
+    },
   ];
 
   return (
-    <div className="max-w-[1440px] mx-auto w-full h-full flex flex-col gap-14 ">
+    <div className="w-full h-full flex flex-col lg:gap-14 gap-5 ">
       <div className="xl:px-10 md:px-5 px-3 w-full h-full gap-5 flex lg:flex-row flex-col justify-between items-center ">
         <div className="lg:order-1 order-2 ">
           <div>
@@ -89,19 +104,18 @@ const Main: React.FC = () => {
       </div>
       <div>
         <Marquee>
-          {skillLogo?.map(({ id, image }) => {
-            return (
-              <div key={id} className="w-24 h-24">
-                <Image
-                  src={image}
-                  alt="js"
-                  className="object-cover w-full h-full"
-                  width={0}
-                  height={0}
-                />
-              </div>
-            );
-          })}
+          {skillLogo?.map(({ id, image }) => (
+            <div key={id} className="md:w-20 md:h-20 w-14 h-14">
+              <Image
+                src={image}
+                alt={`Skill ${id}`}
+                className="object-cover w-full h-full"
+                width={0}
+                height={0}
+                priority
+              />
+            </div>
+          ))}
         </Marquee>
       </div>
     </div>

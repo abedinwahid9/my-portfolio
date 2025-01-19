@@ -14,10 +14,10 @@ export const metadata: Metadata = {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <Loading>
-      <section className="max-w-[1440px]  mx-auto   ">
-        <Navbar />
+      <Navbar />
+      <main className="max-w-[1440px]  mx-auto xl:mt-0 lg:mt-2  mt-14 lg:py-0 md:py-10 py-8">
         {children}
-      </section>
+      </main>
     </Loading>
   );
 };
