@@ -58,7 +58,7 @@ const AnimatedBtn: React.FC<BtnProps> = ({ title, width, icon, show }) => {
         onHoverEnd={() => {
           setHover(false);
         }}
-        className={`dark:bg-lg-button flex gap-2 justify-center items-center font-semibold bg-dr-button md:py-2 shadow-[inset_0px_0px_32px_-15px_rgba(0,_0,_0,_0.8)] py-1 md:px-5 px-2 md:text-lg text-sm capitalize text-lg-text dark:text-dr-text rounded-sm`}
+        className={`dark:bg-lg-button flex gap-2 justify-center items-center font-semibold bg-dr-button md:py-2 py-1 md:px-5 px-2 md:text-lg text-sm capitalize text-lg-text dark:text-dr-text rounded-sm shadow-[inset_0px_0px_32px_-15px_rgba(0,_0,_0,_0.8)]`}
       >
         <motion.div className="block h-8 overflow-hidden">
           {textSplit?.map((str, i) => (

@@ -14,6 +14,7 @@ import tailwind from "../../../../public/icons/icons8-tailwindcss-480.png";
 import mongoose from "../../../../public/icons/icons8-mongoose-480.png";
 import Image from "next/image";
 import ArrowSvgAni from "../svg/ArrowSvgAni";
+import CloudDownloadIcon from "../svg/CloudDownloadIcon";
 
 interface SkillLogo {
   id: number;
@@ -90,7 +91,7 @@ const Main: React.FC = () => {
             <AnimatedBtn
               title="resume"
               width="md:w-2/3 w-1/2"
-              icon={<FiAlignCenter />}
+              icon={<CloudDownloadIcon />}
               show={true}
             />
             <AnimatedBtn

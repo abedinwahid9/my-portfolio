@@ -3,13 +3,13 @@
 import { motion } from "framer-motion";
 
 interface AnimatedArrowProps {
-  color?: string;
   size?: number;
 }
 
-const ArrowSvgAni = ({ color = "#000000", size = 26 }: AnimatedArrowProps) => {
+const ArrowSvgAni = ({ size = 28 }: AnimatedArrowProps) => {
   return (
     <motion.svg
+      className="dark:stroke-dr-text stroke-lg-text"
       width={size}
       height={size}
       viewBox="0 0 24 24"
@@ -26,7 +26,6 @@ const ArrowSvgAni = ({ color = "#000000", size = 26 }: AnimatedArrowProps) => {
     >
       <motion.path
         d="M5 12H19M19 12L13 6M19 12L13 18"
-        stroke={color}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
