@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 interface AnimatedArrowProps {
   size?: number;
@@ -7,7 +7,7 @@ interface AnimatedArrowProps {
 
 const CloudDownloadIcon = ({ size = 28 }: AnimatedArrowProps) => {
   // Variants for the arrow animation
-  const arrowVariants = {
+  const arrowVariants: Variants = {
     initial: { y: 0 },
     animate: {
       y: [0, 6, 0], // Bounce up and down
@@ -21,7 +21,7 @@ const CloudDownloadIcon = ({ size = 28 }: AnimatedArrowProps) => {
   };
 
   // Variants for the cloud pulse animation
-  const cloudVariants = {
+  const cloudVariants: Variants = {
     initial: { scale: 1 },
     animate: {
       scale: [1, 1.05, 1],

@@ -1,6 +1,5 @@
 import SocialLinks from "../share/SocialLinks";
 import AnimatedBtn from "../share/AnimatedBtn";
-import { FiAlignCenter } from "react-icons/fi";
 import Name from "./Name";
 import Profile from "./Profile";
 import TypeWriting from "../autoTyping/TypeWriting";
