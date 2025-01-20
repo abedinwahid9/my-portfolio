@@ -34,7 +34,7 @@ const Profile = () => {
       variants={imgVariants}
       initial="hidden"
       animate={["visible", "shadow"]}
-      className="lg:w-[380px] rounded-2xl overflow-hidden lg:order-2 order-1  lg:h-[380px] sm:w-72 w-44 sm:h-72 h-44 relative "
+      className="lg:w-[380px] rounded-2xl overflow-hidden lg:order-2 order-1  lg:h-[380px] sm:w-72 w-48 sm:h-72 h-48 relative "
     >
       <Image src={profile} alt="profile" className="object-cover" fill />
     </motion.div>

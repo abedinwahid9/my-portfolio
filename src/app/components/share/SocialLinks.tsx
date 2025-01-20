@@ -41,7 +41,7 @@ const SocialLinks: React.FC = () => {
       {links.map(({ id, link, icon: Icon }) => (
         <motion.div
           key={id}
-          className="md:w-8 md:h-8 w-5 h-5 dark:text-lg-button hover:text-dr-link text-dr-button  drop-shadow-[0px_0px_10px_rgba(30,136,168,0.8)] "
+          className="md:w-8 md:h-8 w-6 h-6 dark:text-lg-button hover:text-dr-link text-dr-button  drop-shadow-[0px_0px_10px_rgba(30,136,168,0.8)] "
         >
           <Link target="_blank" href={link}>
             <Icon className="w-full h-full" />

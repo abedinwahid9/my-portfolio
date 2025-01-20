@@ -77,10 +77,10 @@ const Main: React.FC = () => {
           <div>
             <TypeWriting />
             <Name />
-            <h2 className="dark:text-lg-text text-dr-text font-bold text-[10px] sm:text-base md:text-xl">
+            <h2 className="dark:text-lg-text text-dr-text font-bold text-[12px] sm:text-base  md:text-xl">
               Front-end Developer | MERN stack | Programming Enthusiast
             </h2>
-            <p className="dark:text-lg-text text-dr-text font-bold text-[10px] sm:text-base md:text-xl">
+            <p className="dark:text-lg-text text-dr-text font-bold text-[12px] sm:text-base md:text-xl">
               {text}
             </p>
           </div>
