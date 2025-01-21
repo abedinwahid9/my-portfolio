@@ -26,7 +26,7 @@ const Navbar = () => {
   const navLink: NavLink[] = [
     { id: 1, title: "home", link: "/" },
     { id: 2, title: "about me", link: "/about-me" },
-    { id: 3, title: "project", link: "/project" },
+    { id: 3, title: "projects", link: "/projects" },
     { id: 4, title: "skills", link: "/skills" },
     { id: 5, title: "contact me", link: "/contact-me" },
   ];

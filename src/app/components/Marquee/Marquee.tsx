@@ -1,55 +1,59 @@
 "use client";
-import { motion } from "framer-motion";
-import React, { useRef, useEffect, useState } from "react";
+import { ReactNode, useRef } from "react";
+import {
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+  useMotionValue,
+  useVelocity,
+  useAnimationFrame,
+} from "framer-motion";
+import { wrap } from "@motionone/utils";
 
-interface MarqueeProps {
-  children: React.ReactNode;
-  speed?: number; // Speed in pixels/second
-  gap?: number; // Gap between repeated content
+interface ParallaxProps {
+  children: ReactNode;
+  baseVelocity: number;
 }
 
-const Marquee: React.FC<MarqueeProps> = ({
-  children,
-  speed = 50,
-  gap = 20,
-}) => {
-  const marqueeRef = useRef<HTMLDivElement>(null);
-  const [contentWidth, setContentWidth] = useState<number>(0);
+const Marquee = ({ children, baseVelocity = 100 }: ParallaxProps) => {
+  const baseX = useMotionValue(0);
+  const { scrollY } = useScroll();
+  const scrollVelocity = useVelocity(scrollY);
+  const smoothVelocity = useSpring(scrollVelocity, {
+    damping: 50,
+    stiffness: 100,
+  });
+  const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
+    clamp: false,
+  });
 
-  // Measure the width of the marquee content
-  useEffect(() => {
-    if (marqueeRef.current) {
-      const width = marqueeRef.current.getBoundingClientRect().width;
-      setContentWidth(width);
+  const x = useTransform(baseX, (v) => `${wrap(-20, -45, v)}%`);
+  const directionFactor = useRef<number>(1);
+
+  useAnimationFrame((t, delta) => {
+    let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
+
+    if (velocityFactor.get() < 0) {
+      directionFactor.current = -1;
+    } else if (velocityFactor.get() > 0) {
+      directionFactor.current = 1;
     }
-  }, [children]); // Recalculate if children change
 
-  const animationDuration = contentWidth ? (contentWidth + gap) / speed : 0;
+    moveBy += directionFactor.current * moveBy * velocityFactor.get();
+    baseX.set(baseX.get() + moveBy);
+  });
 
   return (
-    <div className="overflow-hidden whitespace-nowrap relative w-full">
+    <div className="overflow-hidden whitespace-nowrap flex flex-nowrap">
       <motion.div
-        className="flex "
-        initial={{ x: 0 }}
-        animate={{ x: -(contentWidth + gap) }}
-        transition={{
-          repeat: Infinity,
-          duration: animationDuration,
-          ease: "linear",
-        }}
-        style={{ display: "inline-flex" }}
+        className="flex flex-nowrap whitespace-nowrap gap-10"
+        style={{ x }}
       >
-        {/* Repeated content */}
-        <div
-          ref={marqueeRef}
-          className="flex gap-14 flex-shrink-0"
-          style={{ marginRight: gap }}
-        >
-          {children}
-        </div>
-        <div className="flex gap-14 flex-shrink-0" style={{ marginRight: gap }}>
-          {children}
-        </div>
+        {children}
+        {children}
+        {children}
+        {children}
       </motion.div>
     </div>
   );

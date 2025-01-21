@@ -1,5 +1,9 @@
-"use client";
 import Main from "../components/home/Main";
+import { DynamicMetadata } from "../components/share/DynamicMetaData";
+
+export const metadata = DynamicMetadata({
+  page: "Home",
+});
 
 export default function Home() {
   return (

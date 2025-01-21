@@ -1,3 +1,4 @@
+"use client";
 import SocialLinks from "../share/SocialLinks";
 import AnimatedBtn from "../share/AnimatedBtn";
 import Name from "./Name";
@@ -103,8 +104,8 @@ const Main: React.FC = () => {
         </div>
         <Profile />
       </div>
-      <div>
-        <Marquee>
+      <div className="pb-5">
+        <Marquee baseVelocity={-2}>
           {skillLogo?.map(({ id, image }) => (
             <div key={id} className="md:w-20 md:h-20 w-14 h-14">
               <Image
