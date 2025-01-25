@@ -1,11 +1,12 @@
-import ScrollBar from "@/app/components/share/ScrollBar";
+"use client";
+import Project from "@/app/components/project/Project";
+
 import React from "react";
 
 const page = () => {
   return (
-    <div className="relative max-w-[500px]">
-      page
-      <ScrollBar />
+    <div className="w-full h-full">
+      <Project />
     </div>
   );
 };

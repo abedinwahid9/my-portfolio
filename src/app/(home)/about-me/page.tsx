@@ -4,7 +4,6 @@ import AnimatedBtn from "@/app/components/share/AnimatedBtn";
 import ArrowSvgAni from "@/app/components/svg/ArrowSvgAni";
 import { DynamicMetadata } from "@/app/components/share/DynamicMetaData";
 import Title from "@/app/components/share/Title";
-import ScrollProgress from "@/app/components/animation/ScrollProgress";
 
 export const metadata = DynamicMetadata({
   page: "About-me",
@@ -20,7 +19,6 @@ const page = () => {
 
   return (
     <>
-      <ScrollProgress />
       <div className=" py-10 md:px-5 px-3">
         <section className="flex flex-col md:flex-row w-full h-full justify-between gap-10 items-center ">
           <div className="md:w-1/2 w-72 h-full">

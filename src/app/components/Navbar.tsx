@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import logo from "../../../public/assets/logo.png";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 import {
   containerVariants,
@@ -22,6 +22,8 @@ interface NavLink {
 
 const Navbar = () => {
   const [open, setOpen] = useState<boolean>(false);
+  const [scroll, setScroll] = useState(0);
+  const [bgWhite, setBgWhite] = useState<boolean>(false);
   const path = usePathname();
   const navLink: NavLink[] = [
     { id: 1, title: "home", link: "/" },
@@ -48,8 +50,32 @@ const Navbar = () => {
     };
   }, [open]);
 
+  useEffect(() => {
+    const handleScroll = (e) => {
+      // Change background to white after scrolling down 50px
+      if (e.target.scrollTop > 50) {
+        setBgWhite(true);
+      } else {
+        setBgWhite(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+      capture: true,
+    });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="py-5 xl:px-10 md:px-5 px-3 sticky top-0 w-full z-50">
+    <header
+      className={`py-5 xl:px-10 md:px-5 px-3 sticky top-0 ${
+        bgWhite
+          ? "bg-[#1e88a8ea]  dark:bg-dark-bg  drop-shadow-lg duration-300"
+          : "bg-transparent  duration-500"
+      } top-0 w-full z-50`}
+    >
       <nav className="max-w-[1440px]  mx-auto flex justify-between items-center overflow-hidden">
         <div className="order-2 md:order-1 flex justify-center items-center gap-4">
           <Theme />{" "}

@@ -11,7 +11,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <Loading>
       <Navbar />
-      <main className="max-w-[1440px] mx-auto">{children}</main>
+      <main className="max-w-[1440px] mx-auto ">{children}</main>
     </Loading>
   );
 };
