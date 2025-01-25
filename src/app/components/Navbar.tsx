@@ -32,7 +32,7 @@ const Navbar = () => {
     { id: 5, title: "contact me", link: "/contact-me" },
   ];
 
-  // window anywhere click navbar > close
+  // window anywhere click navbar  close
   useEffect(() => {
     const handleClickOutside = () => {
       if (open) {
