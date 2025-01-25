@@ -95,6 +95,7 @@ const Main: React.FC = () => {
               show={true}
             />
             <AnimatedBtn
+              href="/about-me"
               title="about me"
               width="md:w-1/3 w-1/2"
               icon={<ArrowSvgAni />}

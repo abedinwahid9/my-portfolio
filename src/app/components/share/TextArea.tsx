@@ -7,7 +7,7 @@ interface TextAreaProps {
 const TextArea: React.FC<TextAreaProps> = ({ text }) => {
   return (
     <div
-      className="dark:text-lg-text text-dr-text text-lg py-5"
+      className="dark:text-lg-text text-area  text-dr-text md:text-lg text-sm md:py-5 py-2"
       dangerouslySetInnerHTML={{ __html: text }}
     />
   );

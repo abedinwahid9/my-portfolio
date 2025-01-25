@@ -3,6 +3,7 @@
 import { Variants, motion } from "motion/react";
 import { btnVariants, shadowVariants } from "../animation/animatedBtn";
 import { useState } from "react";
+import Link from "next/link";
 
 // Props for the Animated Button component
 interface BtnProps {
@@ -10,9 +11,16 @@ interface BtnProps {
   width: string;
   icon?: React.ReactNode; // Optional React node for an icon
   show?: boolean; // Optional boolean to control the shadow display
+  href?: string | URL | undefined;
 }
 
-const AnimatedBtn: React.FC<BtnProps> = ({ title, width, icon, show }) => {
+const AnimatedBtn: React.FC<BtnProps> = ({
+  title,
+  width,
+  icon,
+  show,
+  href,
+}) => {
   const textSplit: string[] = title?.split(""); // Split the title into an array of characters
   const [hover, setHover] = useState<boolean>(false); // State to track hover status
 
@@ -46,7 +54,7 @@ const AnimatedBtn: React.FC<BtnProps> = ({ title, width, icon, show }) => {
   };
 
   return (
-    <div className={`flex flex-col ${width} h-full gap-2`}>
+    <Link href={href || "#"} className={`flex flex-col ${width} h-full gap-2`}>
       {/* Animated button with shadow effect */}
       <motion.button
         variants={btnVariants}
@@ -93,7 +101,7 @@ const AnimatedBtn: React.FC<BtnProps> = ({ title, width, icon, show }) => {
           className="w-full h-[6px] rounded-sm"
         ></motion.div>
       )}
-    </div>
+    </Link>
   );
 };
 

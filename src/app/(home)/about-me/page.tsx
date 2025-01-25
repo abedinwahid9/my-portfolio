@@ -4,12 +4,21 @@ import AnimatedBtn from "@/app/components/share/AnimatedBtn";
 import ArrowSvgAni from "@/app/components/svg/ArrowSvgAni";
 import { DynamicMetadata } from "@/app/components/share/DynamicMetaData";
 import Title from "@/app/components/share/Title";
-import Link from "next/link";
 import TextArea from "@/app/components/share/TextArea";
+import HightLightText from "@/app/components/share/HightLightText";
+import { CiCoffeeCup } from "react-icons/ci";
+import { FaHandshake, FaMailBulk } from "react-icons/fa";
+import { FiTrendingUp } from "react-icons/fi";
+import { LuBookOpenText } from "react-icons/lu";
 
 export const metadata = DynamicMetadata({
   page: "About-me",
 });
+
+type PersonalText = {
+  icon: React.ReactNode;
+  text: string;
+};
 
 const page = () => {
   const headTitle = [
@@ -17,6 +26,31 @@ const page = () => {
     "Let Me Introduce Myself",
     "The Journey of a Self-Learner",
     "Who Is Abedin Wahid ?",
+  ];
+
+  const personalText: PersonalText[] = [
+    {
+      icon: <CiCoffeeCup />,
+      text: "I’m a coffee enthusiast and love coding late at night.",
+    },
+    {
+      icon: <FiTrendingUp />,
+      text: "I’ve built my first portfolio project with zero budget — just passion and perseverance.",
+    },
+    {
+      icon: <LuBookOpenText />,
+      text: "When I’m not coding, I enjoy reading to book and exploring new places.",
+    },
+  ];
+  const contactText: PersonalText[] = [
+    {
+      icon: <FaMailBulk />,
+      text: "Want to work together or discuss a project? Let’s connect!",
+    },
+    {
+      icon: <FaHandshake />,
+      text: "I'm always open to learning opportunities and collaborations. Feel free to reach out!",
+    },
   ];
 
   return (
@@ -37,14 +71,14 @@ const page = () => {
               <p className="dark:text-lg-text lg:text-3xl md:text-xl text-lg font-extrabold font-playfairDisplay text-dr-text">
                 {headTitle[0]}
               </p>
-              <Link href="/projects">
-                <AnimatedBtn
-                  title="project"
-                  width="md:w-3/4 w-full"
-                  show={true}
-                  icon={<ArrowSvgAni />}
-                />
-              </Link>
+
+              <AnimatedBtn
+                href="/projects"
+                title="project"
+                width="md:w-3/4 w-full"
+                show={true}
+                icon={<ArrowSvgAni />}
+              />
 
               {headTitle?.slice(1).map((str, i) => {
                 return (
@@ -69,18 +103,43 @@ const page = () => {
             <TextArea text='"Coming from a non-CSE background, my journey into web development started out of curiosity. I began learning the basics of HTML, CSS, and JavaScript, and soon discovered the power of the MERN stack. As a self-learner, I’ve built projects from scratch, explored multi-vendor functionalities, and gained hands-on experience in handling international payment gateways."' />
           </div>
           <div>
-            <Title title="Personal Story" />
+            <Title title="Skills & Strengths" />
             <TextArea
-              text="<ul>
+              text="<ol >
 <li>JavaScript (React, Node.js, Express.js)</li>
 <li>MongoDB</li>
 <li>API Development</li>
 <li>Multi-Vendor Systems</li>
 <li>International Payment Integration</li>
-</ul>"
+</ol>"
             />
           </div>
+          <div>
+            <Title title="Soft Skills" />
+            <TextArea text="<ul><li><strong>Problem-Solving</strong>- I enjoy breaking down complex challenges into simple solutions.</li><li><strong>Adaptability</strong>- I quickly learn new technologies and adapt to changing needs.</li><li><strong>Communication</strong>- I explain technical concepts clearly to both tech and non-tech people.</li><li><strong>Time Management</strong>- I meet deadlines without compromising the quality of my work.</li><li><strong>Attention to DetailI</strong>- ensure every line of code is clean, readable, and efficient.</li><li><strong>Collaboration</strong>- I love working with teams and believe in the power of sharing ideas.</li><li><strong>Continuous Learning</strong>- I’m always curious to learn new tools, frameworks, and approaches.</li><li><strong>Critical Thinking</strong>- I make thoughtful decisions to improve code and project quality.</li></ul>" />
+          </div>
+          <div>
+            <Title title="Fun Facts / Personal Touch" />
+            <div className=" md:py-5 py-2">
+              {personalText?.map((p, i) => {
+                return <HightLightText key={i} text={p.text} icon={p.icon} />;
+              })}
+            </div>
+          </div>
+          <div>
+            <Title title="Call to Action" />
+            <div className=" md:py-5 py-2">
+              {contactText?.map((p, i) => {
+                return <HightLightText key={i} text={p.text} icon={p.icon} />;
+              })}
+            </div>
+          </div>
         </section>
+        <div className="flex justify-center text-center">
+          <h3 className="dark:text-lg-text lg:text-3xl md:text-xl text-base font-extrabold text-dr-text underline">
+            &quot;I Build Digital Bridges — Let’s Connect!&quot;
+          </h3>
+        </div>
       </div>
     </>
   );
