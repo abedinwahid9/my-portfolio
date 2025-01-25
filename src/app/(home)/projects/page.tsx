@@ -1,4 +1,3 @@
-"use client";
 import Project from "@/app/components/project/Project";
 
 import React from "react";

@@ -1,114 +1,31 @@
-"use client";
+import AnimatedBtn from "../share/AnimatedBtn";
+import ProjectCard from "../share/ProjectCard";
+import Title from "../share/Title";
+import ArrowSvgAni from "../svg/ArrowSvgAni";
 
 const Project = () => {
   return (
-    <div className="w-full relative h-full">
-      <>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum unde
-          natus dolor hic nobis quibusdam reiciendis sed error cum doloribus
-          esse quasi porro a reprehenderit rerum aut, neque ab blanditiis quas
-          provident deleniti quis magnam! Quos, praesentium nam? Sed similique
-          modi possimus nam reiciendis dolore numquam, autem deserunt odit
-          maxime. Dolores, dignissimos itaque? Enim nemo quaerat laborum debitis
-          id unde aut nihil ducimus fugiat eos, expedita, eius, quam aperiam
-          ipsum temporibus! Architecto in quas ipsum possimus cum beatae tenetur
-          quis veritatis expedita numquam cupiditate ullam nemo sit tempora,
-          molestias pariatur. Enim possimus, natus obcaecati ullam quasi sunt
-          rem officiis voluptates?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum unde
-          natus dolor hic nobis quibusdam reiciendis sed error cum doloribus
-          esse quasi porro a reprehenderit rerum aut, neque ab blanditiis quas
-          provident deleniti quis magnam! Quos, praesentium nam? Sed similique
-          modi possimus nam reiciendis dolore numquam, autem deserunt odit
-          maxime. Dolores, dignissimos itaque? Enim nemo quaerat laborum debitis
-          id unde aut nihil ducimus fugiat eos, expedita, eius, quam aperiam
-          ipsum temporibus! Architecto in quas ipsum possimus cum beatae tenetur
-          quis veritatis expedita numquam cupiditate ullam nemo sit tempora,
-          molestias pariatur. Enim possimus, natus obcaecati ullam quasi sunt
-          rem officiis voluptates?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum unde
-          natus dolor hic nobis quibusdam reiciendis sed error cum doloribus
-          esse quasi porro a reprehenderit rerum aut, neque ab blanditiis quas
-          provident deleniti quis magnam! Quos, praesentium nam? Sed similique
-          modi possimus nam reiciendis dolore numquam, autem deserunt odit
-          maxime. Dolores, dignissimos itaque? Enim nemo quaerat laborum debitis
-          id unde aut nihil ducimus fugiat eos, expedita, eius, quam aperiam
-          ipsum temporibus! Architecto in quas ipsum possimus cum beatae tenetur
-          quis veritatis expedita numquam cupiditate ullam nemo sit tempora,
-          molestias pariatur. Enim possimus, natus obcaecati ullam quasi sunt
-          rem officiis voluptates?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum unde
-          natus dolor hic nobis quibusdam reiciendis sed error cum doloribus
-          esse quasi porro a reprehenderit rerum aut, neque ab blanditiis quas
-          provident deleniti quis magnam! Quos, praesentium nam? Sed similique
-          modi possimus nam reiciendis dolore numquam, autem deserunt odit
-          maxime. Dolores, dignissimos itaque? Enim nemo quaerat laborum debitis
-          id unde aut nihil ducimus fugiat eos, expedita, eius, quam aperiam
-          ipsum temporibus! Architecto in quas ipsum possimus cum beatae tenetur
-          quis veritatis expedita numquam cupiditate ullam nemo sit tempora,
-          molestias pariatur. Enim possimus, natus obcaecati ullam quasi sunt
-          rem officiis voluptates?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum unde
-          natus dolor hic nobis quibusdam reiciendis sed error cum doloribus
-          esse quasi porro a reprehenderit rerum aut, neque ab blanditiis quas
-          provident deleniti quis magnam! Quos, praesentium nam? Sed similique
-          modi possimus nam reiciendis dolore numquam, autem deserunt odit
-          maxime. Dolores, dignissimos itaque? Enim nemo quaerat laborum debitis
-          id unde aut nihil ducimus fugiat eos, expedita, eius, quam aperiam
-          ipsum temporibus! Architecto in quas ipsum possimus cum beatae tenetur
-          quis veritatis expedita numquam cupiditate ullam nemo sit tempora,
-          molestias pariatur. Enim possimus, natus obcaecati ullam quasi sunt
-          rem officiis voluptates?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum unde
-          natus dolor hic nobis quibusdam reiciendis sed error cum doloribus
-          esse quasi porro a reprehenderit rerum aut, neque ab blanditiis quas
-          provident deleniti quis magnam! Quos, praesentium nam? Sed similique
-          modi possimus nam reiciendis dolore numquam, autem deserunt odit
-          maxime. Dolores, dignissimos itaque? Enim nemo quaerat laborum debitis
-          id unde aut nihil ducimus fugiat eos, expedita, eius, quam aperiam
-          ipsum temporibus! Architecto in quas ipsum possimus cum beatae tenetur
-          quis veritatis expedita numquam cupiditate ullam nemo sit tempora,
-          molestias pariatur. Enim possimus, natus obcaecati ullam quasi sunt
-          rem officiis voluptates?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum unde
-          natus dolor hic nobis quibusdam reiciendis sed error cum doloribus
-          esse quasi porro a reprehenderit rerum aut, neque ab blanditiis quas
-          provident deleniti quis magnam! Quos, praesentium nam? Sed similique
-          modi possimus nam reiciendis dolore numquam, autem deserunt odit
-          maxime. Dolores, dignissimos itaque? Enim nemo quaerat laborum debitis
-          id unde aut nihil ducimus fugiat eos, expedita, eius, quam aperiam
-          ipsum temporibus! Architecto in quas ipsum possimus cum beatae tenetur
-          quis veritatis expedita numquam cupiditate ullam nemo sit tempora,
-          molestias pariatur. Enim possimus, natus obcaecati ullam quasi sunt
-          rem officiis voluptates?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum unde
-          natus dolor hic nobis quibusdam reiciendis sed error cum doloribus
-          esse quasi porro a reprehenderit rerum aut, neque ab blanditiis quas
-          provident deleniti quis magnam! Quos, praesentium nam? Sed similique
-          modi possimus nam reiciendis dolore numquam, autem deserunt odit
-          maxime. Dolores, dignissimos itaque? Enim nemo quaerat laborum debitis
-          id unde aut nihil ducimus fugiat eos, expedita, eius, quam aperiam
-          ipsum temporibus! Architecto in quas ipsum possimus cum beatae tenetur
-          quis veritatis expedita numquam cupiditate ullam nemo sit tempora,
-          molestias pariatur. Enim possimus, natus obcaecati ullam quasi sunt
-          rem officiis voluptates?
-        </p>
-      </>
+    <div className=" py-10 md:px-5 px-3">
+      <div className="flex md:flex-row flex-col gap-3">
+        <div className="md:w-2/3 w-full">
+          <Title title='"Every Project Is a Story — Here’s My Collection."' />
+        </div>
+        <div className="md:w-1/3 w-full">
+          <AnimatedBtn
+            title="skills"
+            width="w-full"
+            show={true}
+            icon={<ArrowSvgAni />}
+          />
+        </div>
+      </div>
+      <div className="grid grid-cols-3 gap-5 justify-center items-center py-10">
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+      </div>
     </div>
   );
 };
