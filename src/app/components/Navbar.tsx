@@ -22,7 +22,6 @@ interface NavLink {
 
 const Navbar = () => {
   const [open, setOpen] = useState<boolean>(false);
-  const [scroll, setScroll] = useState(0);
   const [bgWhite, setBgWhite] = useState<boolean>(false);
   const path = usePathname();
   const navLink: NavLink[] = [
@@ -51,18 +50,21 @@ const Navbar = () => {
   }, [open]);
 
   useEffect(() => {
-    const handleScroll = (e) => {
-      // Change background to white after scrolling down 50px
-      if (e.target.scrollTop > 50) {
+    const handleScroll = (e: Event) => {
+      const target = e.target as HTMLElement;
+      // Ensure the target is an HTMLElement and check scrollTop
+      if (target.scrollTop > 50) {
         setBgWhite(true);
       } else {
         setBgWhite(false);
       }
     };
+
     window.addEventListener("scroll", handleScroll, {
       passive: true,
       capture: true,
     });
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
