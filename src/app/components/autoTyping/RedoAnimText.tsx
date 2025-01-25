@@ -1,5 +1,5 @@
 "use client";
-import { motion, useMotionValue, useTransform, animate } from "motion/react";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { useEffect } from "react";
 
 export interface IRedoAnimTextProps {

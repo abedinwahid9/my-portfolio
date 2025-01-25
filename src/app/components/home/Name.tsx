@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 const Name: React.FC = () => {
   const name = "Abedin Wahid";

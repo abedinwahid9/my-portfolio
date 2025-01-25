@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import profile from "../../../assets/my.png";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 const Profile = () => {
   const imgVariants = {
