@@ -19,7 +19,7 @@ const Project = () => {
           />
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-5 justify-center items-center py-10">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 justify-center items-center py-10 content-center">
         <ProjectCard />
         <ProjectCard />
         <ProjectCard />
