@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 
 const AnimeDivider = () => {
   // Generate multiple lines with slightly different phases
-  const totalLines = 5;
+  const totalLines = 20;
   const lines = Array.from({ length: totalLines }, (_, i) => ({
     id: i,
     offset: i * (1 / totalLines),
   }));
 
   return (
-    <div className="w-full h-[50px] relative">
+    <div className="w-full h-[60px] relative">
       <svg
         viewBox="0 0 1000 400"
         className="w-full h-full"
