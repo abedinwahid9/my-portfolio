@@ -12,6 +12,7 @@ const Project = () => {
         </div>
         <div className="md:w-1/3 w-full">
           <AnimatedBtn
+            href="/skills"
             title="skills"
             width="w-full"
             show={true}
@@ -19,7 +20,7 @@ const Project = () => {
           />
         </div>
       </div>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 justify-center items-center py-10 content-center">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 justify-center items-center py-10 place-items-center">
         <ProjectCard />
         <ProjectCard />
         <ProjectCard />

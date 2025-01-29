@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Image from "next/image";
 import React, { useState } from "react";
 import demo from "@/assets/demo.png";
@@ -45,20 +45,18 @@ const ProjectCard: React.FC = () => {
       onHoverEnd={() => {
         setHover(false);
       }}
-      className="sm:w-[300px] h-[400px] w-[280px]  rounded-3xl bg-[#50aab86e] relative z-0 shadow-lg"
+      className="w-[320px] h-[400px]   rounded-3xl bg-[#50aab86e] relative z-0 shadow-lg "
     >
       {/* Card right bar */}
-      <div className="sm:w-[60px] h-[320px] w-[40px]  bg-[#50aab86e] absolute top-5 left-0 z-40 rounded-r-full drop-shadow-2xl"></div>
+      <div className="md:w-[60px] h-[320px] w-[40px]  bg-[#50aab86e] absolute top-5 left-0 z-40 rounded-r-full drop-shadow-2xl"></div>
       <motion.div
         variants={cardVariants}
         // initial="default"
         animate={hover ? "start" : "animate"}
-        className="sm:w-[300px] h-[340px] w-[280px]  
+        className=" h-[340px] w-[320px]  
      bg-gradient-to-bl from-lg-button to-dr-link  backdrop-blur-3xl
-
-
  border-dr-link border-2  
- absolute p-2 top-3 -right-1 rounded-2xl drop-shadow-2xl"
+ absolute p-2 top-3 -right-1 rounded-2xl drop-shadow-2xl shadow-[inset_0px_0px_32px_-15px_rgba(0,_0,_0,_5)]"
       >
         <Image
           className="w-full h-3/5 object-cover  rounded-t-xl overflow-hidden"

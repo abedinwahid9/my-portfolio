@@ -1,6 +1,6 @@
 "use client";
 
-import { Variants, motion } from "framer-motion";
+import { Variants, motion } from "motion/react";
 import { btnVariants, shadowVariants } from "../animation/animatedBtn";
 import { useState } from "react";
 import Link from "next/link";
