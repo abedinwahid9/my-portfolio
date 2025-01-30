@@ -22,7 +22,12 @@ const page = () => {
         </div>
       </section>
 
-      <AnimeDivider />
+      <div className="flex py-2">
+        <AnimeDivider />
+        <AnimeDivider />
+        <AnimeDivider />
+        <AnimeDivider />
+      </div>
 
       <section>
         <div className="md:w-2/3 w-full">

@@ -1,4 +1,5 @@
 import AnimatedBtn from "../share/AnimatedBtn";
+import AnimeDivider from "../share/AnimeDivider";
 import ProjectCard from "../share/ProjectCard";
 import Title from "../share/Title";
 import ArrowSvgAni from "../svg/ArrowSvgAni";
@@ -19,6 +20,12 @@ const Project = () => {
             icon={<ArrowSvgAni />}
           />
         </div>
+      </div>
+      <div className="flex py-2">
+        <AnimeDivider />
+        <AnimeDivider />
+        <AnimeDivider />
+        <AnimeDivider />
       </div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 justify-center items-center py-10 place-items-center">
         <ProjectCard />
