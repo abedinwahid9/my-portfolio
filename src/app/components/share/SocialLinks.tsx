@@ -5,7 +5,7 @@ import { FiLinkedin } from "react-icons/fi";
 import { FiFacebook } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 interface LinkItem {
   id: number;

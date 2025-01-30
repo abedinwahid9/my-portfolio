@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, Variants } from "motion/react";
+import { motion, Variants } from "framer-motion";
 
 interface AnimatedArrowProps {
   size?: number;
