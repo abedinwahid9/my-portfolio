@@ -1,5 +1,6 @@
 import AnimatedBtn from "@/app/components/share/AnimatedBtn";
 import AnimeDivider from "@/app/components/share/AnimeDivider";
+import SkillCard from "@/app/components/share/SkillCard";
 import Title from "@/app/components/share/Title";
 import ArrowSvgAni from "@/app/components/svg/ArrowSvgAni";
 import React from "react";
@@ -35,6 +36,9 @@ const page = () => {
       <section className="py-3">
         <div className="md:w-2/3 w-full">
           <Title title="front end technology" />
+        </div>
+        <div className="py-5">
+          <SkillCard />
         </div>
       </section>
     </div>
