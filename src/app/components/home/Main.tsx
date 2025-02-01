@@ -5,16 +5,26 @@ import Name from "./Name";
 import Profile from "./Profile";
 import TypeWriting from "../autoTyping/TypeWriting";
 import Marquee from "../Marquee/Marquee";
-import js from "../../../../public/icons/icons8-javascript-480.png";
-import html from "../../../../public/icons/icons8-html-480.png";
-import css from "../../../../public/icons/icons8-css3-480.png";
-import bootstrap from "../../../../public/icons/icons8-bootstrap-480.png";
-import express from "../../../../public/icons/icons8-express-js-500.png";
-import tailwind from "../../../../public/icons/icons8-tailwindcss-480.png";
-import mongoose from "../../../../public/icons/icons8-mongoose-480.png";
 import Image from "next/image";
 import ArrowSvgAni from "../svg/ArrowSvgAni";
 import CloudDownloadIcon from "../svg/CloudDownloadIcon";
+import html from "../../../../public/icons/icons8-html-480.png";
+import css from "../../../../public/icons/icons8-css3-480.png";
+import js from "../../../../public/icons/icons8-javascript-480.png";
+import bootstrap from "../../../../public/icons/icons8-bootstrap-480.png";
+import tailwind from "../../../../public/icons/icons8-tailwindcss-480.png";
+import express from "../../../../public/icons/icons8-express-js-500.png";
+import figma from "../../../../public/icons/icons8-figma-480.png";
+import photoshop from "../../../../public/icons/icons8-photoshop-480.png";
+import illustrator from "../../../../public/icons/icons8-adobe-illustrator-480.png";
+import npm from "../../../../public/icons/icons8-npm-480.png";
+import node from "../../../../public/icons/icons8-nodejs-480.png";
+import mongoose from "../../../../public/icons/icons8-mongoose-480.png";
+import mongodb from "../../../../public/icons/mongodb.png";
+import react from "../../../../public/icons/icons8-react-480.png";
+import nextjs from "../../../../public/icons/nextjs-icon.png";
+import framer from "../../../../public/icons/framer-motion-seeklogo.png";
+import redux from "../../../../public/icons/icons8-redux-480.png";
 
 interface SkillLogo {
   id: number;
@@ -52,7 +62,7 @@ const Main: React.FC = () => {
     },
     {
       id: 7,
-      image: mongoose,
+      image: framer,
     },
     {
       id: 8,
@@ -60,15 +70,39 @@ const Main: React.FC = () => {
     },
     {
       id: 9,
-      image: mongoose,
+      image: node,
     },
     {
       id: 10,
-      image: mongoose,
+      image: npm,
     },
     {
       id: 11,
-      image: js,
+      image: mongodb,
+    },
+    {
+      id: 12,
+      image: react,
+    },
+    {
+      id: 13,
+      image: nextjs,
+    },
+    {
+      id: 14,
+      image: redux,
+    },
+    {
+      id: 15,
+      image: figma,
+    },
+    {
+      id: 16,
+      image: photoshop,
+    },
+    {
+      id: 17,
+      image: illustrator,
     },
   ];
 
