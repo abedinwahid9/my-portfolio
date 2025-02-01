@@ -1,6 +1,7 @@
 import AnimatedBtn from "@/app/components/share/AnimatedBtn";
 import AnimeDivider from "@/app/components/share/AnimeDivider";
 import SkillCard from "@/app/components/share/SkillCard";
+import { GrCertificate } from "react-icons/gr";
 import Title from "@/app/components/share/Title";
 import ArrowSvgAni from "@/app/components/svg/ArrowSvgAni";
 import React from "react";
@@ -21,6 +22,7 @@ import react from "../../../../public/icons/icons8-react-480.png";
 import nextjs from "../../../../public/icons/nextjs-icon.png";
 import framer from "../../../../public/icons/framer-motion-seeklogo.png";
 import redux from "../../../../public/icons/icons8-redux-480.png";
+import CertificationCard from "@/app/components/share/CertificationCard";
 
 const page = () => {
   const skills = [
@@ -73,6 +75,7 @@ const page = () => {
 
   return (
     <div className=" py-10 md:px-5 px-3">
+      {/* skills section */}
       <section className="flex md:flex-row flex-col gap-3">
         <div className="md:w-2/3 w-full">
           <Title title='"Skills That Power My Code"' />
@@ -88,6 +91,7 @@ const page = () => {
         </div>
       </section>
 
+      {/* divider */}
       <div className="flex py-2 items-center">
         <AnimeDivider />
         <span className="h-0.5 shadow-md shadow-lg-primary dark:shadow-lg-link w-full"></span>
@@ -114,6 +118,22 @@ const page = () => {
           </section>
         );
       })}
+      <AnimeDivider />
+      {/* certificatioN */}
+      <section className="py-5">
+        <div className="flex justify-center items-center gap-3">
+          <GrCertificate className="w-8 h-8 dark:text-lg-text text-dr-text" />
+          <Title title={`certificatioN `} />
+          <GrCertificate className="w-8 h-8 dark:text-lg-text text-dr-text" />
+        </div>
+        <div className="md:py-8 py-5 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4">
+          <CertificationCard />
+          <CertificationCard />
+          <CertificationCard />
+          <CertificationCard />
+          <CertificationCard />
+        </div>
+      </section>
     </div>
   );
 };

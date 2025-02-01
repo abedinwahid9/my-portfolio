@@ -140,7 +140,7 @@ const Main: React.FC = () => {
         <Profile />
       </div>
       <div className="pb-5">
-        <Marquee baseVelocity={-2}>
+        <Marquee baseVelocity={-0.8}>
           {skillLogo?.map(({ id, image }) => (
             <div key={id} className="md:w-20 md:h-20 w-14 h-14">
               <Image

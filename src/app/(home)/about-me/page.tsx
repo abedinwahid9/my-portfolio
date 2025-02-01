@@ -67,15 +67,15 @@ const page = () => {
             />
           </div>
           <div className="md:w-1/2 w-full h-full flex justify-start md:justify-center">
-            <div className="  flex flex-col md:gap-5 gap-3">
-              <p className="dark:text-lg-text lg:text-3xl md:text-xl text-lg font-extrabold font-playfairDisplay text-dr-text">
+            <div className=" w-full flex flex-col md:gap-5 gap-3">
+              <p className="dark:text-lg-text md:text-start text-center lg:text-3xl md:text-xl text-lg font-extrabold font-playfairDisplay text-dr-text">
                 {headTitle[0]}
               </p>
 
               <AnimatedBtn
                 href="/projects"
                 title="project"
-                width="md:w-3/4 w-full"
+                width="md:w-3/5 w-full"
                 show={true}
                 icon={<ArrowSvgAni />}
               />
