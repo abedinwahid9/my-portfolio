@@ -16,7 +16,18 @@ const SkillCard: FC<SKILLCARD> = ({ title, img, key }) => {
       key={key}
       className="md:w-24 w-20 md:h-24 h-20 shadow-[inset_0px_0px_10px_5px_#1E88A8] drop-shadow-2xl flex justify-center items-center flex-col relative overflow-hidden group rounded-2xl"
     >
-      <div className="md:w-10 w-8 md:h-10 h-8 relative z-10">
+      <motion.div
+        initial={{ y: 0 }}
+        animate={{
+          y: [0, -4, 0],
+          transition: {
+            duration: 1.5,
+            ease: "easeInOut",
+            repeat: Infinity,
+          },
+        }}
+        className="md:w-10 w-8 md:h-10 h-8 relative z-10"
+      >
         <Image
           className="w-full h-full"
           width={40} // Set appropriate width
@@ -24,7 +35,7 @@ const SkillCard: FC<SKILLCARD> = ({ title, img, key }) => {
           src={img}
           alt={title}
         />
-      </div>
+      </motion.div>
 
       {/* Static shadow effect */}
       <motion.div
@@ -33,7 +44,7 @@ const SkillCard: FC<SKILLCARD> = ({ title, img, key }) => {
         animate="start"
         style={{
           background:
-            "radial-gradient(circle, rgba(80,170,184,1) 10%, rgba(80,170,184,0.76) 20%, rgba(80,170,184,0.01) 50%)",
+            "radial-gradient(circle, rgba(80,170,184,1) 10%, rgba(80,170,184,0.76) 15%, rgba(80,170,184,0.01) 40%)",
           filter: "blur(3px)",
         }}
         className="w-full h-[6px] rounded-sm"

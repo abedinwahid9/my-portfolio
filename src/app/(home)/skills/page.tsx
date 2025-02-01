@@ -12,17 +12,28 @@ import tailwind from "../../../../public/icons/icons8-tailwindcss-480.png";
 import express from "../../../../public/icons/icons8-express-js-500.png";
 import figma from "../../../../public/icons/icons8-figma-480.png";
 import photoshop from "../../../../public/icons/icons8-photoshop-480.png";
+import illustrator from "../../../../public/icons/icons8-adobe-illustrator-480.png";
 import npm from "../../../../public/icons/icons8-npm-480.png";
+import node from "../../../../public/icons/icons8-nodejs-480.png";
+import mongoose from "../../../../public/icons/icons8-mongoose-480.png";
+import mongodb from "../../../../public/icons/mongodb.png";
+import react from "../../../../public/icons/icons8-react-480.png";
+import nextjs from "../../../../public/icons/nextjs-icon.png";
+import framer from "../../../../public/icons/framer-motion-seeklogo.png";
+import redux from "../../../../public/icons/icons8-redux-480.png";
 
 const page = () => {
   const skills = [
     {
       category: "front end technology",
       skills: [
-        { title: "html", icon: html },
-        { title: "css", icon: css },
+        { title: "next js", icon: nextjs },
+        { title: "react", icon: react },
+        { title: "motion", icon: framer },
         { title: "bootstrap", icon: bootstrap },
         { title: "tailwind", icon: tailwind },
+        { title: "html", icon: html },
+        { title: "css", icon: css },
       ],
     },
     {
@@ -31,18 +42,32 @@ const page = () => {
     },
     {
       category: "back end technology",
-      skills: [{ title: "express js", icon: express }],
+      skills: [
+        { title: "express js", icon: express },
+        { title: "node js", icon: node },
+      ],
+    },
+    {
+      category: "database",
+      skills: [
+        { title: "mongodb", icon: mongodb },
+        { title: "mongoose", icon: mongoose },
+      ],
     },
     {
       category: "ui ux",
       skills: [
         { title: "figma", icon: figma },
         { title: "photo shop", icon: photoshop },
+        { title: "illustrator", icon: illustrator },
       ],
     },
     {
       category: "others",
-      skills: [{ title: "npm", icon: npm }],
+      skills: [
+        { title: "redux", icon: redux },
+        { title: "npm", icon: npm },
+      ],
     },
   ];
 
