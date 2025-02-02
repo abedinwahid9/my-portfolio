@@ -120,7 +120,10 @@ const Main: React.FC = () => {
               {text}
             </p>
           </div>
-          <SocialLinks />
+          <div className="md:py-5 py-2">
+            <SocialLinks />
+          </div>
+
           <div className="flex md:gap-5 gap-3 py-2">
             <AnimatedBtn
               title="resume"

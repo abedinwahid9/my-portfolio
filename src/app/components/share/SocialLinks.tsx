@@ -1,4 +1,4 @@
-"use clients";
+"use client";
 import Link from "next/link";
 import { FiGithub } from "react-icons/fi";
 import { FiLinkedin } from "react-icons/fi";
@@ -37,7 +37,7 @@ const SocialLinks: React.FC = () => {
   //
 
   return (
-    <div className="md:py-5 py-2 flex gap-2">
+    <div className=" flex gap-2">
       {links.map(({ id, link, icon: Icon }) => (
         <motion.div
           key={id}
