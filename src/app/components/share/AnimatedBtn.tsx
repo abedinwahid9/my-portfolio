@@ -22,7 +22,7 @@ const AnimatedBtn: React.FC<BtnProps> = ({
   href,
 }) => {
   const textSplit: string[] = title?.split(""); // Split the title into an array of characters
-  const [hover, setHover] = useState<boolean>(false); // State to track hover status
+  const [hover, setHover] = useState<boolean>(false);
 
   // Text animation variants with stagger effect
   const textVariants: Variants = {
