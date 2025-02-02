@@ -1,4 +1,3 @@
-import AnimatedBtn from "@/app/components/share/AnimatedBtn";
 import AnimatedInput from "@/app/components/share/AnimatedInput";
 import SocialLinks from "@/app/components/share/SocialLinks";
 import React from "react";
@@ -9,6 +8,7 @@ const page = () => {
 
   return (
     <section className="py-12 md:px-5 px-3 justify-center flex items-center  flex-col  lg:flex-row gap-5">
+      {/* left info */}
       <div className="md:w-1/2 w-full h-full">
         <div className="flex flex-col gap-2 items-center  ">
           <h3 className="dark:text-lg-text  lg:text-2xl text-base font-extrabold text-dr-text font-playfairDisplay capitalize text-center">
@@ -23,7 +23,7 @@ const page = () => {
           <div className=" py-2">
             <SocialLinks />
           </div>
-          <h3 className="dark:text-lg-text  lg:text-2xl text-base font-extrabold text-dr-text font-playfairDisplay capitalize  text-center">
+          <h3 className="dark:text-lg-text  lg:text-xl text-base font-extrabold text-dr-text font-playfairDisplay capitalize  text-center">
             &quot;Whether you have a project idea, a question, or just want to
             say hello — I’d love to hear from you!!&quot;
           </h3>
@@ -37,22 +37,24 @@ const page = () => {
           </p>
         </div>
       </div>
-
+      {/* right form */}
       <form
         action=""
-        className="flex md:w-1/2 w-full items-center flex-col gap-4 bg-lg-button/10 md:p-12 p-5 rounded-tl-[150px]"
+        className="flex md:w-1/2 w-full items-center flex-col gap-4 bg-lg-button/10 md:px-8 py-8 px-5 border-2 dark:border-lg-secondary border-lg-primary rounded-tl-[150px] rounded-br-[60px]"
       >
         <h3 className="dark:text-lg-text  lg:text-2xl text-base font-extrabold text-dr-text font-playfairDisplay capitalize text-center">
           &quot;Get in Touch with Me&quot;
         </h3>
-        <AnimatedInput />
-        <AnimatedInput />
-        <AnimatedInput />
-        <AnimatedInput />
-        <AnimatedInput />
-        <div className="w-full">
-          <AnimatedBtn title="Let’s Talk" width="w-full" />
-        </div>
+        <AnimatedInput field="input" title="name" />
+        <AnimatedInput field="input" title="email" />
+        <AnimatedInput field="input" title="number" />
+        <AnimatedInput field="textarea" title="comment" />
+        <button
+          type="submit"
+          className="w-full bg-dr-button py-3 text-lg font-semibold text-dr-text rounded-br-3xl"
+        >
+          Let’s Talk
+        </button>
       </form>
     </section>
   );

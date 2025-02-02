@@ -2,7 +2,15 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-const AnimatedInput = () => {
+const AnimatedInput = ({
+  field,
+  title,
+  type = "text",
+}: {
+  field: string;
+  title: string;
+  type?: string;
+}) => {
   const [isFocused, setIsFocused] = useState(false);
   const [inputValue, setInputValue] = useState("");
 
@@ -13,38 +21,50 @@ const AnimatedInput = () => {
         initial={{
           top: "50%",
           left: "1rem",
-          fontSize: "1rem",
-          color: "#9ca3af",
+          fontSize: "14px",
         }}
         animate={
           isFocused || inputValue
             ? {
-                top: "-0.5rem",
-                left: "0.5rem",
-                fontSize: "0.75rem",
-                color: "#3b82f6",
+                top: 5,
+                left: 20,
+                fontSize: "14px",
               }
             : {}
         }
         transition={{ type: "spring", stiffness: 300 }}
         htmlFor="input"
-        className="absolute pointer-events-none text-sm font-medium text-gray-500 transform -translate-y-1/2"
+        className="absolute pointer-events-none text-xs  dark:text-white font-semibold text-dr-text transform -translate-y-1/2 uppercase "
       >
-        Enter your text
+        {title}
       </motion.label>
 
       {/* Input Field */}
-      <motion.input
-        id="input"
-        type="text"
-        value={inputValue}
-        onFocus={() => setIsFocused(true)}
-        onBlur={() => setIsFocused(false)}
-        onChange={(e) => setInputValue(e.target.value)}
-        placeholder=""
-        className="block w-full px-4 py-3 mt-1 text-base border-2 border-gray-300 rounded-lg focus:border-blue-500 bg-transparent focus:outline-none"
-        transition={{ duration: 0.3 }}
-      />
+      {field === "input" ? (
+        <motion.input
+          id="input"
+          type={type}
+          value={inputValue}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
+          onChange={(e) => setInputValue(e.target.value)}
+          placeholder=""
+          className="block w-full px-4 py-4 mt-1 text-base rounded-t-3xl  bg-lg-button/20 focus:outline-none"
+          transition={{ duration: 0.3 }}
+        />
+      ) : (
+        <motion.textarea
+          id="input"
+          rows={2}
+          value={inputValue}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
+          onChange={(e) => setInputValue(e.target.value)}
+          placeholder=""
+          className="block w-full px-4 py-4 mt-1 text-base rounded-t-3xl  bg-lg-button/20 focus:outline-none"
+          transition={{ duration: 0.3 }}
+        />
+      )}
     </div>
   );
 };
