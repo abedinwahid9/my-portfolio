@@ -49,6 +49,7 @@ const ProjectCard: React.FC = () => {
     >
       {/* Card right bar */}
       <div className="md:w-[60px] h-[320px] w-[40px]  bg-[#50aab86e] absolute top-5 left-0 z-40 rounded-r-full drop-shadow-2xl"></div>
+      {/* main card */}
       <motion.div
         variants={cardVariants}
         // initial="default"
@@ -56,7 +57,7 @@ const ProjectCard: React.FC = () => {
         className=" h-[340px] w-[320px]  
      bg-gradient-to-bl from-lg-button to-dr-link  backdrop-blur-3xl
  border-dr-link border-2  
- absolute p-2 top-3 -right-1 rounded-2xl drop-shadow-2xl shadow-[inset_0px_0px_32px_-15px_rgba(0,_0,_0,_5)]"
+ absolute p-2 top-3  rounded-2xl drop-shadow-2xl shadow-[inset_0px_0px_32px_-15px_rgba(0,_0,_0,_5)]"
       >
         <Image
           className="w-full h-3/5 object-cover  rounded-t-xl overflow-hidden"
