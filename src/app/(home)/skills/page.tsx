@@ -128,10 +128,6 @@ const page = () => {
         </div>
         <div className="md:py-8 py-5 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4">
           <CertificationCard />
-          <CertificationCard />
-          <CertificationCard />
-          <CertificationCard />
-          <CertificationCard />
         </div>
       </section>
     </div>
