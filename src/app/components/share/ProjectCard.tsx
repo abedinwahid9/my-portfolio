@@ -9,11 +9,11 @@ interface PROJECTCARD {
   title: string;
   image: StaticImageData[]; // Array of images
   description: string;
-  skill: {
-    frontend?: string[];
-    backend?: string[];
-    database?: string[];
-  }; // Changed from array to single object
+  technology: {
+    frontend?: string[] | number[];
+    backend?: string[] | number[];
+    database?: string[] | number[];
+  };
 }
 
 // Define the ProjectCard component with correct props
@@ -74,7 +74,7 @@ const ProjectCard: React.FC<{ project: PROJECTCARD }> = ({ project }) => {
 
           {/* Dynamic Skill Rendering */}
           <div className="py-1">
-            {Object.entries(project.skill).map(([key, skills], index) => (
+            {Object.entries(project.technology).map(([key, skills], index) => (
               <p
                 key={index}
                 className="text-dr-text font-bold text-base capitalize flex items-center gap-2 "

@@ -1,7 +1,7 @@
 import React from "react";
 
 interface TITLE {
-  title: string;
+  title: string | undefined;
 }
 
 const Title: React.FC<TITLE> = ({ title }) => {
