@@ -22,7 +22,7 @@ const ProjectCard: React.FC<{ project: PROJECTCARD }> = ({ project }) => {
 
   const cardVariants = {
     start: {
-      x: [10, 50, 10], // Moves right on hover
+      x: [10, 60, 10], // Moves right on hover
       transition: {
         duration: 1,
         ease: "easeIn",
@@ -30,7 +30,7 @@ const ProjectCard: React.FC<{ project: PROJECTCARD }> = ({ project }) => {
       zIndex: 9999,
     },
     animate: {
-      x: [10, 55, 10],
+      x: [10, 65, 10],
       zIndex: 1,
       transition: {
         duration: 1,
@@ -46,7 +46,7 @@ const ProjectCard: React.FC<{ project: PROJECTCARD }> = ({ project }) => {
       className="w-[320px] h-[410px] rounded-3xl bg-[#50aab86e] relative z-0 shadow-lg"
     >
       {/* Card right bar */}
-      <div className="md:w-[50px] h-[320px] w-[40px] bg-[#50aab86e] absolute top-5 left-0 z-40 border-dr-link border-r-2 rounded-r-full drop-shadow-2xl"></div>
+      <div className="md:w-[55px] h-[320px] w-[40px] bg-[#50aab86e] absolute top-5 left-0 z-40 border-dr-link border-r-2 rounded-r-full drop-shadow-2xl"></div>
 
       {/* Main Card */}
       <motion.div

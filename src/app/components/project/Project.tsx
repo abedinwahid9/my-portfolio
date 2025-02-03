@@ -46,7 +46,7 @@ const Project = () => {
   ];
 
   return (
-    <div className=" py-10 md:px-5 px-3">
+    <div className=" py-10 md:px-5 px-3 overflow-hidden">
       <div className="flex md:flex-row flex-col gap-3">
         <div className="md:w-2/3 w-full">
           <Title title='"Every Project Is a Story — Here’s My Collection."' />
