@@ -64,7 +64,7 @@ const ProjectDetailsPage: React.FC = () => {
       </div>
 
       {/* Project Image */}
-      <div className="w-full h-full lg:px-20 lg:py-10 py-5">
+      <div className="w-full h-full lg:px-20  lg:py-10 py-5">
         {project.image.length > 0 && (
           <Image
             className="w-full h-auto object-cover rounded-xl overflow-hidden"
@@ -77,14 +77,14 @@ const ProjectDetailsPage: React.FC = () => {
       </div>
 
       {/* Project Description */}
-      <div className="py-1 px-5">
+      <div className="py-1 px-3">
         <TextArea text={project.description} />
       </div>
 
       {/* Project Technologies */}
 
       {Object.entries(project.technology).map(([category, techList], index) => (
-        <div key={index} className="md:w-2/3 w-full lg:ml-4 ml-3 py-3">
+        <div key={index} className=" lg:ml-4 ml-3 py-3">
           <Title title={`${category} :`} />
           <div className="py-4 grid lg:grid-cols-8 md:grid-cols-6 grid-cols-3 justify-center place-items-center items-center gap-3">
             {techList?.map(
@@ -102,7 +102,7 @@ const ProjectDetailsPage: React.FC = () => {
       {/* Project Links */}
 
       {project.links && (
-        <div className="py-5 grid md:grid-cols-3 grid-cols-1 gap-3">
+        <div className="py-5 grid md:grid-cols-3 grid-cols-1 gap-5">
           {Object.entries(project.links).map(([title, link], i) => {
             return (
               <AnimatedBtn
