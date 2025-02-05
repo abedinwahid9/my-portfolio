@@ -1,23 +1,17 @@
 "use client";
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants, PanInfo } from "framer-motion";
 import { wrap } from "popmotion";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
-const IMAGES = [
-  "https://d33wubrfki0l68.cloudfront.net/dd23708ebc4053551bb33e18b7174e73b6e1710b/dea24/static/images/wallpapers/shared-colors@2x.png",
-  "https://d33wubrfki0l68.cloudfront.net/49de349d12db851952c5556f3c637ca772745316/cfc56/static/images/wallpapers/bridge-02@2x.png",
-  "https://d33wubrfki0l68.cloudfront.net/594de66469079c21fc54c14db0591305a1198dd6/3f4b1/static/images/wallpapers/bridge-01@2x.png",
-];
-
-const sliderVariants = {
-  incoming: (direction) => ({
+const sliderVariants: Variants = {
+  incoming: (direction: number) => ({
     x: direction > 0 ? "100%" : "-100%",
     scale: 1.2,
     opacity: 0,
   }),
   active: { x: 0, scale: 1, opacity: 1 },
-  exit: (direction) => ({
+  exit: (direction: number) => ({
     x: direction > 0 ? "-100%" : "100%",
     scale: 1,
     opacity: 0.2,
@@ -29,17 +23,24 @@ const sliderTransition = {
   ease: [0.56, 0.03, 0.12, 1.04],
 };
 
-const Scroll = () => {
-  const [[imageCount, direction], setImageCount] = useState([0, 0]);
+interface IMAGE {
+  IMAGES: string[] | StaticImageData[];
+}
+
+const Carousel: React.FC<IMAGE> = ({ IMAGES }) => {
+  const [[imageCount, direction], setImageCount] = useState<[number, number]>([
+    0, 0,
+  ]);
   const activeImageIndex = wrap(0, IMAGES.length, imageCount);
 
-  const swipeToImage = (swipeDirection) => {
+  const swipeToImage = (swipeDirection: number): void => {
     setImageCount([imageCount + swipeDirection, swipeDirection]);
   };
 
-  const dragEndHandler = (dragInfo) => {
+  const dragEndHandler = (dragInfo: PanInfo): void => {
     const draggedDistance = dragInfo.offset.x;
     const swipeThreshold = 50;
+
     if (draggedDistance > swipeThreshold) {
       swipeToImage(-1);
     } else if (draggedDistance < -swipeThreshold) {
@@ -47,14 +48,14 @@ const Scroll = () => {
     }
   };
 
-  const skipToImage = (imageId) => {
+  const skipToImage = (imageId: number): void => {
     const changeDirection = imageId > activeImageIndex ? 1 : -1;
     setImageCount([imageId, changeDirection]);
   };
 
   return (
     <main className="flex flex-col items-center">
-      <div className="relative w-[600px] h-[350px] overflow-hidden">
+      <div className="relative w-full lg:h-[650px] md:h-[400px] h-[200px]  overflow-hidden">
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={imageCount}
@@ -71,10 +72,9 @@ const Scroll = () => {
             className="absolute w-full h-full"
           >
             <Image
+              className="w-full h-full object-contain"
               src={IMAGES[activeImageIndex]}
               alt="Slide"
-              layout="fill"
-              objectFit="cover"
             />
           </motion.div>
         </AnimatePresence>
@@ -102,14 +102,12 @@ const Scroll = () => {
           <div
             key={i}
             onClick={() => skipToImage(i)}
-            className="cursor-pointer border-2 border-transparent hover:border-gray-600 rounded"
+            className="cursor-pointer border-2 border-transparent hover:border-gray-600 rounded "
           >
             <Image
               src={image}
               alt={`Thumbnail ${i + 1}`}
-              width={80}
-              height={50}
-              className={`rounded ${
+              className={`rounded object-contain w-20 h-[50px] ${
                 i === activeImageIndex ? "border-2 border-blue-500" : ""
               }`}
             />
@@ -120,4 +118,4 @@ const Scroll = () => {
   );
 };
 
-export default Scroll;
+export default Carousel;

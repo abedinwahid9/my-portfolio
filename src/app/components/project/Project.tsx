@@ -7,6 +7,7 @@ import ArrowSvgAni from "../svg/ArrowSvgAni";
 import demo from "@/assets/demo.png";
 import demo1 from "@/assets/demo1.png";
 import demo2 from "@/assets/demo2.png";
+import demo4 from "@/assets/demo4.png";
 import { StaticImageData } from "next/image";
 import html from "../../../../public/icons/icons8-html-480.png";
 import css from "../../../../public/icons/icons8-css3-480.png";
@@ -66,7 +67,7 @@ export const projects: Project[] = [
   {
     id: 2,
     title: "Camera - Ecommerce Shop",
-    image: [demo1],
+    image: [demo1, demo1, demo4],
     description:
       "The Camera E-commerce Shop is an innovative platform designed to provide a seamless experience for buyers, sellers, and administrators. This feature-rich e-commerce solution specializes in cameras and accessories, ensuring efficiency and scalability.",
     technology: {

@@ -2,10 +2,11 @@
 import { useParams } from "next/navigation";
 import { projects } from "../project/Project";
 import Title from "../share/Title";
-import Image, { StaticImageData } from "next/image";
+import { StaticImageData } from "next/image";
 import TextArea from "../share/TextArea";
 import SkillCard from "../share/SkillCard";
 import AnimatedBtn from "../share/AnimatedBtn";
+import Carousel from "../Carousel";
 
 // ✅ Define Proper TypeScript Interfaces
 interface Technology {
@@ -64,16 +65,8 @@ const ProjectDetailsPage: React.FC = () => {
       </div>
 
       {/* Project Image */}
-      <div className="w-full h-full lg:px-20  lg:py-10 py-5">
-        {project.image.length > 0 && (
-          <Image
-            className="w-full h-auto object-cover rounded-xl overflow-hidden"
-            src={project.image[0]}
-            alt={project.title}
-            width={800} // Fixed width
-            height={500} // Fixed height
-          />
-        )}
+      <div className="w-full h-full lg:px-5  lg:py-10 py-5 ">
+        {project.image.length > 0 && <Carousel IMAGES={project.image} />}
       </div>
 
       {/* Project Description */}
