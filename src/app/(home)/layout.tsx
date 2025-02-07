@@ -1,7 +1,7 @@
-// layouts/Layout.tsx
 import { ReactNode } from "react";
 import Navbar from "../components/Navbar";
 import Loading from "../components/Loading";
+import Template from "../components/share/TempleteAnim";
 
 interface LayoutProps {
   children: ReactNode;
@@ -11,7 +11,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <Loading>
       <Navbar />
-      <main className="max-w-[1440px] mx-auto ">{children}</main>
+      <Template>{children}</Template>
     </Loading>
   );
 };

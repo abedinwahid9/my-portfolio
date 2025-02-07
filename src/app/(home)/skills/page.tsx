@@ -1,3 +1,4 @@
+"use client";
 import AnimatedBtn from "@/app/components/share/AnimatedBtn";
 import AnimeDivider from "@/app/components/share/AnimeDivider";
 import SkillCard from "@/app/components/share/SkillCard";
@@ -23,6 +24,7 @@ import nextjs from "../../../../public/icons/nextjs-icon.png";
 import framer from "../../../../public/icons/framer-motion-seeklogo.png";
 import redux from "../../../../public/icons/icons8-redux-480.png";
 import CertificationCard from "@/app/components/share/CertificationCard";
+import PageTransition from "@/app/components/share/PageTransition";
 
 const page = () => {
   const skills = [
@@ -74,63 +76,67 @@ const page = () => {
   ];
 
   return (
-    <div className=" py-10 md:px-5 px-3">
-      {/* skills section */}
-      <section className="flex md:flex-row flex-col gap-3">
-        <div className="md:w-2/3 w-full">
-          <Title title='"Skills That Power My Code"' />
-        </div>
-        <div className="md:w-1/3 w-full">
-          <AnimatedBtn
-            href="/contact-me"
-            title="contact me"
-            width="w-full"
-            show={true}
-            icon={<ArrowSvgAni />}
-          />
-        </div>
-      </section>
-
-      {/* divider */}
-      <div className="flex py-2 items-center">
-        <AnimeDivider />
-        <span className="h-0.5 shadow-md shadow-lg-primary dark:shadow-lg-link w-full"></span>
-        <AnimeDivider />
-        <span className="h-0.5 shadow-md shadow-lg-primary dark:shadow-lg-link w-full"></span>
-        <AnimeDivider />
-        <span className="h-0.5 shadow-md shadow-lg-primary dark:shadow-lg-link w-full"></span>
-        <AnimeDivider />
-      </div>
-
-      {skills?.map((cate, i) => {
-        return (
-          <section key={i} className="py-3">
-            <div className="md:w-2/3 w-full lg:ml-4 ml-3">
-              <Title title={`${cate.category} :`} />
+    <PageTransition
+      OgComponent={() => (
+        <div className=" py-10 md:px-5 px-3">
+          {/* skills section */}
+          <section className="flex md:flex-row flex-col gap-3">
+            <div className="md:w-2/3 w-full">
+              <Title title='"Skills That Power My Code"' />
             </div>
-            <div className="py-4 grid lg:grid-cols-8 md:grid-cols-6 grid-cols-3 justify-center place-items-center items-center gap-3">
-              {cate.skills?.map((skill, i) => {
-                return (
-                  <SkillCard key={i} title={skill.title} img={skill.icon} />
-                );
-              })}
+            <div className="md:w-1/3 w-full">
+              <AnimatedBtn
+                href="/contact-me"
+                title="contact me"
+                width="w-full"
+                show={true}
+                icon={<ArrowSvgAni />}
+              />
             </div>
           </section>
-        );
-      })}
-      <AnimeDivider />
-      {/* certificatioN */}
-      <section className="py-5">
-        <div className="flex justify-center items-center gap-3">
-          <GrCertificate className="w-8 h-8 dark:text-lg-text text-dr-text" />
-          <Title title={`certificatioN `} />
-          <GrCertificate className="w-8 h-8 dark:text-lg-text text-dr-text" />
+
+          {/* divider */}
+          <div className="flex py-2 items-center">
+            <AnimeDivider />
+            <span className="h-0.5 shadow-md shadow-lg-primary dark:shadow-lg-link w-full"></span>
+            <AnimeDivider />
+            <span className="h-0.5 shadow-md shadow-lg-primary dark:shadow-lg-link w-full"></span>
+            <AnimeDivider />
+            <span className="h-0.5 shadow-md shadow-lg-primary dark:shadow-lg-link w-full"></span>
+            <AnimeDivider />
+          </div>
+
+          {skills?.map((cate, i) => {
+            return (
+              <section key={i} className="py-3">
+                <div className="md:w-2/3 w-full lg:ml-4 ml-3">
+                  <Title title={`${cate.category} :`} />
+                </div>
+                <div className="py-4 grid lg:grid-cols-8 md:grid-cols-6 grid-cols-3 justify-center place-items-center items-center gap-3">
+                  {cate.skills?.map((skill, i) => {
+                    return (
+                      <SkillCard key={i} title={skill.title} img={skill.icon} />
+                    );
+                  })}
+                </div>
+              </section>
+            );
+          })}
+          <AnimeDivider />
+          {/* certificatioN */}
+          <section className="py-5">
+            <div className="flex justify-center items-center gap-3">
+              <GrCertificate className="w-8 h-8 dark:text-lg-text text-dr-text" />
+              <Title title={`certificatioN `} />
+              <GrCertificate className="w-8 h-8 dark:text-lg-text text-dr-text" />
+            </div>
+            <div className="md:py-8 py-5 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4">
+              <CertificationCard />
+            </div>
+          </section>
         </div>
-        <div className="md:py-8 py-5 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4">
-          <CertificationCard />
-        </div>
-      </section>
-    </div>
+      )}
+    />
   );
 };
 

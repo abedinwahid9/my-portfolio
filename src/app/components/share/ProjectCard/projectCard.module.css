@@ -1,0 +1,34 @@
+.anim_card {
+  animation: returnAnimated 1.5s forwards;
+  animation-timing-function: linear;
+  pointer-events: none;
+}
+
+.main_card:hover .anim_card {
+  animation: animated 1.5s forwards;
+  animation-timing-function: linear;
+}
+
+@keyframes animated {
+  50% {
+    transform: translateX(60px);
+  }
+  100% {
+    transform: translateX(10px);
+    z-index: 9999;
+  }
+}
+
+@keyframes returnAnimated {
+  0% {
+    transform: translateX(10px);
+    z-index: 9999;
+  }
+  50% {
+    transform: translateX(60px);
+    z-index: 9999;
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}
