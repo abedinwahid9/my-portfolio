@@ -1,7 +1,7 @@
+"use client";
 import { ReactNode } from "react";
 import Navbar from "../components/Navbar";
 import Loading from "../components/Loading";
-import Template from "../components/share/TempleteAnim";
 
 interface LayoutProps {
   children: ReactNode;
@@ -9,10 +9,12 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <Loading>
-      <Navbar />
-      <Template>{children}</Template>
-    </Loading>
+    <>
+      <Loading>
+        <Navbar />
+        <main className="max-w-[1440px] mx-auto">{children}</main>
+      </Loading>
+    </>
   );
 };
 

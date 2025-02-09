@@ -2,16 +2,17 @@
 import { motion } from "framer-motion";
 
 const variants = {
-  hidden: { opacity: 0, x: -200 },
-  enter: { opacity: 1, x: 0 },
+  hidden: { opacity: 0, y: 40 },
+  enter: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
 };
 
-export default function Template({
-  children,
-  ...props
-}: {
-  children: React.ReactNode;
-}) {
+const template = ({ children, ...props }: { children: React.ReactNode }) => {
   return (
     <motion.main
       className="max-w-[1440px] mx-auto"
@@ -23,4 +24,6 @@ export default function Template({
       {children}
     </motion.main>
   );
-}
+};
+
+export default template;

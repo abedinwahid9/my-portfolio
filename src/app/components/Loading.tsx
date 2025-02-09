@@ -14,7 +14,10 @@ const Loading = ({ children }: LayoutProps) => {
       setIsLoading(false);
     }, 4000); // 5 seconds
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      localStorage.setItem("loading", "true");
+    };
   }, []);
 
   const pathVariants = {
@@ -32,7 +35,7 @@ const Loading = ({ children }: LayoutProps) => {
   return (
     <>
       {isLoading ? (
-        <div className="w-full min-h-full flex justify-center items-center">
+        <div className="absolute w-full min-h-screen flex justify-center items-center ">
           <svg
             id="Layer_1"
             data-name="Layer 1"
