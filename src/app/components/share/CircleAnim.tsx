@@ -3,7 +3,13 @@ import { motion, spring, Variants } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import React from "react";
 
-const CircleAnim = ({ img, index }: { img: StaticImageData; key: number }) => {
+const CircleAnim = ({
+  img,
+  index,
+}: {
+  img: StaticImageData;
+  index: number;
+}) => {
   const iconVariants: Variants = {
     hidden: { opacity: 0, scale: 0.5 },
     visible: (index) => ({
