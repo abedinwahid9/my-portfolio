@@ -10,6 +10,8 @@ import { CiCoffeeCup } from "react-icons/ci";
 import { FaHandshake, FaMailBulk } from "react-icons/fa";
 import { FiTrendingUp } from "react-icons/fi";
 import { LuBookOpenText } from "react-icons/lu";
+import html from "../../../../public/icons/icons8-html-480.png";
+import CircleAnim from "@/app/components/share/CircleAnim";
 
 export const metadata = DynamicMetadata({
   page: "About-me",
@@ -56,18 +58,31 @@ const page = () => {
   return (
     <>
       <div className=" py-10 md:px-5 px-3">
-        <section className="flex flex-col md:flex-row w-full h-full justify-between gap-10 items-center ">
-          <div className="md:w-1/2 w-72 h-full">
-            <Image
-              className="w-full h-full"
-              width={0}
-              height={0}
-              src={aboutme}
-              alt="about-me"
-            />
+        <section className="flex flex-col md:flex-row w-full h-full justify-between gap-10 items-center">
+          {/* Left Section: Image with Rotating Icons */}
+          <div className="md:w-1/2 w-72 h-[589px] flex justify-center items-center relative">
+            {/* Main Image */}
+            <div className="relative z-50">
+              <Image
+                className="w-full h-full"
+                width={0}
+                height={0}
+                src={aboutme}
+                alt="about-me"
+              />
+            </div>
+
+            {/* Rotating Icons */}
+            <div className="w-full h-full absolute -top-10 flex justify-center items-center z-10">
+              {Array.from({ length: 4 }).map((_, index) => (
+                <CircleAnim img={html} key={index} index={index} />
+              ))}
+            </div>
           </div>
+
+          {/* Right Section: Text and Button */}
           <div className="md:w-1/2 w-full h-full flex justify-start md:justify-center">
-            <div className=" w-full flex flex-col md:gap-5 gap-3">
+            <div className="w-full flex flex-col md:gap-5 gap-3">
               <p className="dark:text-lg-text md:text-start text-center lg:text-3xl md:text-xl text-lg font-extrabold font-playfairDisplay text-dr-text">
                 {headTitle[0]}
               </p>
@@ -80,16 +95,14 @@ const page = () => {
                 icon={<ArrowSvgAni />}
               />
 
-              {headTitle?.slice(1).map((str, i) => {
-                return (
-                  <p
-                    key={i}
-                    className="dark:text-lg-text lg:text-3xl md:text-xl text-lg font-extrabold text-dr-text"
-                  >
-                    &#34;{str}&#34;
-                  </p>
-                );
-              })}
+              {headTitle?.slice(1).map((str, i) => (
+                <p
+                  key={i}
+                  className="dark:text-lg-text lg:text-3xl md:text-xl text-lg font-extrabold text-dr-text"
+                >
+                  &#34;{str}&#34;
+                </p>
+              ))}
             </div>
           </div>
         </section>
