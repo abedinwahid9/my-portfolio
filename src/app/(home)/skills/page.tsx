@@ -24,6 +24,7 @@ import nextjs from "../../../../public/icons/nextjs-icon.png";
 import framer from "../../../../public/icons/framer-motion-seeklogo.png";
 import redux from "../../../../public/icons/icons8-redux-480.png";
 import CertificationCard from "@/app/components/share/CertificationCard";
+import AnimatedCharacters from "@/app/components/share/AnimatedCharacters";
 
 const page = () => {
   const skills = [
@@ -107,7 +108,9 @@ const page = () => {
         return (
           <section key={i} className="py-3">
             <div className="md:w-2/3 w-full lg:ml-4 ml-3">
-              <Title title={`${cate.category} :`} />
+              <h3 className="dark:text-lg-text lg:text-3xl md:text-xl text-lg font-extrabold text-dr-text font-playfairDisplay capitalize">
+                <AnimatedCharacters text={`${cate.category}:`} />
+              </h3>
             </div>
             <div className="py-4 grid lg:grid-cols-8 md:grid-cols-6 grid-cols-3 justify-center place-items-center items-center gap-3">
               {cate.skills?.map((skill, i) => {

@@ -37,10 +37,10 @@ export const itemVariants = {
 // nav link animated top to bottom
 export const navVariants = {
   hidden: {
-    y: -100,
+    y: 0,
   },
   visible: (index: number) => ({
-    y: 0,
+    y: -50,
     transition: {
       delay: index * 0.1,
       duration: 0.5,

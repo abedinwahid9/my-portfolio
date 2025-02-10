@@ -27,8 +27,6 @@ const Profile = () => {
     },
   };
 
-  // shadow-[0px_0px_60px_5px_#50AAB8]
-
   return (
     <motion.div
       variants={imgVariants}

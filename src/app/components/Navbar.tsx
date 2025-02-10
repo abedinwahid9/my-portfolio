@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import {
   containerVariants,
   itemVariants,
-  navVariants,
+  // navVariants,
   paperVariants,
 } from "./animation/navAllAnimation";
 import { logoVariants } from "./animation/mainLogo";
@@ -84,22 +84,31 @@ const Navbar = () => {
           <div>
             {" "}
             {/* desktop nav */}
-            <ul className="md:flex hidden gap-5">
+            <ul className="md:flex hidden gap-5 overflow-hidden">
               {navLink?.map(({ id, title, link }) => (
                 <motion.li
-                  whileHover={path !== link ? { scale: 1.05 } : {}}
                   key={id}
-                  variants={navVariants}
-                  initial="hidden"
-                  animate="visible"
-                  custom={id}
-                  className="dark:text-lg-text text-dr-text text-xl  font-medium capitalize font-playfairDisplay"
+                  className="relative h-8 flex items-center overflow-hidden text-xl font-medium capitalize font-playfairDisplay dark:text-lg-text text-dr-text"
+                  initial="default"
+                  whileHover="hover"
                 >
                   <Link
-                    className={` ${path === link ? "active" : "line-hover"}`}
                     href={link}
+                    className={`${path === link ? "active" : "line-hover"}`}
                   >
-                    {title}
+                    <motion.div
+                      className="relative flex flex-col items-center"
+                      variants={{
+                        default: { y: 0 },
+                        hover: { y: "-100%" },
+                      }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                    >
+                      <motion.span>{title}</motion.span>
+                      <motion.span className="absolute translate-y-full">
+                        {title}
+                      </motion.span>
+                    </motion.div>
                   </Link>
                 </motion.li>
               ))}

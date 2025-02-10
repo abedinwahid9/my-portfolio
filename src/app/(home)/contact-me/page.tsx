@@ -1,4 +1,5 @@
 import FormAnim from "@/app/components/FormAnim";
+import AnimatedCharacters from "@/app/components/share/AnimatedCharacters";
 import SocialLinks from "@/app/components/share/SocialLinks";
 import React from "react";
 
@@ -30,10 +31,10 @@ const page = () => {
         </div>
         <div className="flex flex-col justify-center items-center py-16">
           <h5 className="dark:text-lg-text text-5xl font-extrabold text-dr-text font-playfairDisplay capitalize">
-            Thank you
+            <AnimatedCharacters text="Thank you" />
           </h5>
           <p className="dark:text-lg-text tracking-widest text-xl font-extrabold text-dr-text capitalize">
-            Have a good day
+            <AnimatedCharacters text="Have a good day" />
           </p>
         </div>
       </div>

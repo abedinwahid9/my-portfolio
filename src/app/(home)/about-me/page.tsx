@@ -13,6 +13,7 @@ import { LuBookOpenText } from "react-icons/lu";
 import html from "../../../../public/icons/icons8-html-480.png";
 import CircleAnim from "@/app/components/share/CircleAnim";
 import AnimeDivider from "@/app/components/share/AnimeDivider";
+import AnimatedCharacters from "@/app/components/share/AnimatedCharacters";
 
 export const metadata = DynamicMetadata({
   page: "About-me",
@@ -83,9 +84,9 @@ const page = () => {
 
           {/* Right Section: Text and Button */}
           <div className="md:w-1/2 w-full h-full flex md:justify-center justify-start">
-            <div className=" flex flex-col md:gap-5 gap-3">
+            <div className=" flex flex-col md:gap-5 gap-3 md:w-3/4 w-full">
               <p className="dark:text-lg-text md:text-start text-center lg:text-3xl md:text-xl text-lg font-extrabold font-playfairDisplay text-dr-text">
-                {headTitle[0]}
+                <AnimatedCharacters text={headTitle[0]} />
               </p>
 
               <AnimatedBtn
@@ -99,9 +100,11 @@ const page = () => {
               {headTitle?.slice(1).map((str, i) => (
                 <p
                   key={i}
-                  className="dark:text-lg-text lg:text-3xl md:text-xl text-lg font-extrabold text-dr-text"
+                  className="dark:text-lg-text lg:text-3xl md:text-xl text-lg font-extrabold text-dr-text inline-flex"
                 >
-                  &#34;{str}&#34;
+                  &#34;
+                  <AnimatedCharacters text={str} />
+                  &#34;
                 </p>
               ))}
             </div>

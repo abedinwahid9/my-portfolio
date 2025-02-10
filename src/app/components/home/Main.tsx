@@ -25,6 +25,7 @@ import react from "../../../../public/icons/icons8-react-480.png";
 import nextjs from "../../../../public/icons/nextjs-icon.png";
 import framer from "../../../../public/icons/framer-motion-seeklogo.png";
 import redux from "../../../../public/icons/icons8-redux-480.png";
+import AnimatedCharacters from "../share/AnimatedCharacters";
 
 interface SkillLogo {
   id: number;
@@ -113,11 +114,11 @@ const Main: React.FC = () => {
           <div>
             <TypeWriting />
             <Name />
-            <h2 className="dark:text-lg-text text-dr-text font-bold text-[12px] sm:text-base  md:text-xl">
-              Front-end Developer | MERN stack | Programming Enthusiast
+            <h2 className="dark:text-lg-text text-dr-text font-bold text-[12px] sm:text-base  md:text-xl leading-none ">
+              <AnimatedCharacters text="Front-end Developer | MERN stack | Programming Enthusiast" />
             </h2>
             <p className="dark:text-lg-text text-dr-text font-bold text-[12px] sm:text-base md:text-xl">
-              {text}
+              <AnimatedCharacters text={text} />
             </p>
           </div>
           <div className="md:py-5 py-2">
