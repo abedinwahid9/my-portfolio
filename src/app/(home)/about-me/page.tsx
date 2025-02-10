@@ -60,9 +60,9 @@ const page = () => {
       <div className=" py-10 md:px-5 px-3">
         <section className="flex flex-col md:flex-row w-full h-full justify-between gap-10 items-center">
           {/* Left Section: Image with Rotating Icons */}
-          <div className="md:w-1/2 w-72 h-[589px] flex justify-center items-center relative">
+          <div className="md:w-1/2 w-72 md:h-[589px] h-[288px] flex justify-center items-center relative">
             {/* Main Image */}
-            <div className="relative z-50">
+            <div className="relative z-40 ">
               <Image
                 className="w-full h-full"
                 width={0}
@@ -73,7 +73,7 @@ const page = () => {
             </div>
 
             {/* Rotating Icons */}
-            <div className="w-full h-full absolute -top-10 flex justify-center items-center z-10">
+            <div className="w-full  h-full absolute -top-10 flex justify-center items-center z-10">
               {Array.from({ length: 4 }).map((_, index) => (
                 <CircleAnim img={html} key={index} index={index} />
               ))}
