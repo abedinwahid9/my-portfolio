@@ -12,6 +12,7 @@ import { FiTrendingUp } from "react-icons/fi";
 import { LuBookOpenText } from "react-icons/lu";
 import html from "../../../../public/icons/icons8-html-480.png";
 import CircleAnim from "@/app/components/share/CircleAnim";
+import AnimeDivider from "@/app/components/share/AnimeDivider";
 
 export const metadata = DynamicMetadata({
   page: "About-me",
@@ -81,8 +82,8 @@ const page = () => {
           </div>
 
           {/* Right Section: Text and Button */}
-          <div className="md:w-1/2 w-full h-full flex justify-start md:justify-center">
-            <div className="w-full flex flex-col md:gap-5 gap-3">
+          <div className="md:w-1/2 w-full h-full flex md:justify-center justify-start">
+            <div className=" flex flex-col md:gap-5 gap-3">
               <p className="dark:text-lg-text md:text-start text-center lg:text-3xl md:text-xl text-lg font-extrabold font-playfairDisplay text-dr-text">
                 {headTitle[0]}
               </p>
@@ -90,7 +91,7 @@ const page = () => {
               <AnimatedBtn
                 href="/projects"
                 title="project"
-                width="md:w-3/5 w-full"
+                width="md:w-3/4 w-full"
                 show={true}
                 icon={<ArrowSvgAni />}
               />
@@ -106,6 +107,16 @@ const page = () => {
             </div>
           </div>
         </section>
+        {/* divider */}
+        <div className="flex py-2 items-center">
+          <AnimeDivider />
+          <span className="h-0.5 shadow-md shadow-lg-primary dark:shadow-lg-link w-full"></span>
+          <AnimeDivider />
+          <span className="h-0.5 shadow-md shadow-lg-primary dark:shadow-lg-link w-full"></span>
+          <AnimeDivider />
+          <span className="h-0.5 shadow-md shadow-lg-primary dark:shadow-lg-link w-full"></span>
+          <AnimeDivider />
+        </div>
         <section className="py-5 flex flex-col gap-5">
           <div>
             <Title title="Hey! I'm Abedin Wahid" />

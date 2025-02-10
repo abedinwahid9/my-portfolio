@@ -1,4 +1,4 @@
-import AnimatedInput from "@/app/components/share/AnimatedInput";
+import FormAnim from "@/app/components/FormAnim";
 import SocialLinks from "@/app/components/share/SocialLinks";
 import React from "react";
 
@@ -38,24 +38,7 @@ const page = () => {
         </div>
       </div>
       {/* Right Form */}
-      <form
-        action=""
-        className="flex md:w-1/2 w-full items-center flex-col gap-4 bg-lg-button/10 md:px-8 py-8 px-5 border-2 dark:border-lg-secondary border-lg-primary rounded-tl-[150px] rounded-br-[60px]"
-      >
-        <h3 className="dark:text-lg-text lg:text-2xl text-base font-extrabold text-dr-text font-playfairDisplay capitalize text-center">
-          &quot;Get in Touch with Me&quot;
-        </h3>
-        <AnimatedInput field="input" title="name" />
-        <AnimatedInput field="input" title="email" />
-        <AnimatedInput field="input" title="number" />
-        <AnimatedInput field="textarea" title="comment" />
-        <button
-          type="submit"
-          className="w-full bg-dr-button py-3 text-lg font-semibold text-dr-text rounded-br-3xl"
-        >
-          Let’s Talk
-        </button>
-      </form>
+      <FormAnim />
     </section>
   );
 };
