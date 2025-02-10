@@ -9,11 +9,11 @@ import AnimatedBtn from "../share/AnimatedBtn";
 import Carousel from "../Carousel";
 
 // ✅ Define Proper TypeScript Interfaces
-interface Technology {
-  frontend?: { name: string; icon: StaticImageData }[];
-  backend?: { name: string; icon: StaticImageData }[];
-  database?: { name: string; icon: StaticImageData }[];
+interface TechnologyCategory {
+  title: string;
+  skills: { name: string; icon: StaticImageData }[];
 }
+
 interface Links {
   client?: string;
   server?: string;
@@ -25,7 +25,7 @@ interface Project {
   title: string;
   image: StaticImageData[];
   description: string;
-  technology: Technology;
+  technology: TechnologyCategory[]; // ✅ Change to array
   links: Links;
 }
 
@@ -54,13 +54,7 @@ const ProjectDetailsPage: React.FC = () => {
           <Title title={project.title} />
         </div>
         <div className="md:w-1/3 w-full">
-          <AnimatedBtn
-            href="/projects"
-            title="projects"
-            width="w-full"
-            show={true}
-            // icon={<ArrowSvgAni />}
-          />
+          <AnimatedBtn href="/projects" title="projects" width="w-full" show />
         </div>
       </div>
 
@@ -74,39 +68,30 @@ const ProjectDetailsPage: React.FC = () => {
         <TextArea text={project.description} />
       </div>
 
-      {/* Project Technologies */}
-
-      {Object.entries(project.technology).map(([category, techList], index) => (
+      {/* ✅ Fixed Project Technologies Mapping */}
+      {project.technology.map((category, index) => (
         <div key={index} className=" lg:ml-4 ml-3 py-3">
-          <Title title={`${category} :`} />
+          <Title title={`${category.title} :`} />
           <div className="py-4 grid lg:grid-cols-8 md:grid-cols-6 grid-cols-3 justify-center place-items-center items-center gap-3">
-            {techList?.map(
-              (
-                skill: { name: string; icon: StaticImageData },
-                index: number
-              ) => (
-                <SkillCard key={index} title={skill.name} img={skill.icon} />
-              )
-            )}
+            {category.skills.map((skill, i) => (
+              <SkillCard key={i} title={skill.name} img={skill.icon} />
+            ))}
           </div>
         </div>
       ))}
 
       {/* Project Links */}
-
       {project.links && (
         <div className="py-5 grid md:grid-cols-3 grid-cols-1 gap-5">
-          {Object.entries(project.links).map(([title, link], i) => {
-            return (
-              <AnimatedBtn
-                key={i}
-                title={title}
-                width="w-full"
-                href={link}
-                show={true}
-              />
-            );
-          })}
+          {Object.entries(project.links).map(([title, link], i) => (
+            <AnimatedBtn
+              key={i}
+              title={title}
+              width="w-full"
+              href={link}
+              show
+            />
+          ))}
         </div>
       )}
     </div>

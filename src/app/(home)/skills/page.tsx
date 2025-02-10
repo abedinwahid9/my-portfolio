@@ -29,7 +29,7 @@ import AnimatedCharacters from "@/app/components/share/AnimatedCharacters";
 const page = () => {
   const skills = [
     {
-      category: "front end technology",
+      category: "Front End Technology",
       skills: [
         { title: "next js", icon: nextjs },
         { title: "react", icon: react },
@@ -41,7 +41,7 @@ const page = () => {
       ],
     },
     {
-      category: "programming language",
+      category: "Programming Language",
       skills: [{ title: "javascript", icon: js }],
     },
     {
@@ -108,7 +108,7 @@ const page = () => {
         return (
           <section key={i} className="py-3">
             <div className="md:w-2/3 w-full lg:ml-4 ml-3">
-              <h3 className="dark:text-lg-text lg:text-3xl md:text-xl text-lg font-extrabold text-dr-text font-playfairDisplay capitalize">
+              <h3 className="dark:text-lg-text lg:text-3xl md:text-xl text-lg font-extrabold text-dr-text font-playfairDisplay ">
                 <AnimatedCharacters text={`${cate.category}:`} />
               </h3>
             </div>

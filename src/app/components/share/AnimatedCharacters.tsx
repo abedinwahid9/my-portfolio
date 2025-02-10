@@ -1,25 +1,15 @@
 "use client";
-import React, { ReactNode } from "react";
-import { motion, Variants } from "framer-motion";
+import React, { ReactNode, useRef } from "react";
+import { motion, useInView, Variants } from "framer-motion";
 
-// Define the type for Wrapper component props
-interface WrapperProps {
-  children: ReactNode;
-}
-
-// Wrapper to prevent word breaks
-const Wrapper: React.FC<WrapperProps> = ({ children }) => {
+// Wrapper component to prevent word breaks
+const Wrapper: React.FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <span style={{ display: "inline-flex", overflow: "hidden" }}>
       {children}
     </span>
   );
 };
-
-// Define the type for AnimatedCharacters component props
-interface AnimatedCharactersProps {
-  text: string;
-}
 
 // Motion variants for animation
 const item: Variants = {
@@ -35,12 +25,22 @@ const item: Variants = {
 };
 
 // AnimatedCharacters component
-const AnimatedCharacters: React.FC<AnimatedCharactersProps> = ({ text }) => {
+const AnimatedCharacters: React.FC<{ text: string }> = ({ text }) => {
+  // Create a ref for tracking visibility
+  const ref = useRef<HTMLDivElement>(null);
+
+  // Track if the element is in view
+  const isInView = useInView(ref, { once: true, margin: "-10% 0px -10% 0px" });
+
   // Split text into words and characters
   const words = text.split(" ").map((word) => [...word, "\u00A0"]);
 
   return (
-    <motion.div initial="hidden" animate="visible">
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+    >
       {words.map((word, wordIndex) => (
         <Wrapper key={wordIndex}>
           {word.map((char, charIndex) => (

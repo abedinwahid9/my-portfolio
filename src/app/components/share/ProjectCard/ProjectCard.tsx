@@ -1,5 +1,6 @@
 import Image, { StaticImageData } from "next/image";
 import style from "./projectCard.module.css";
+import AnimatedCharacters from "../AnimatedCharacters";
 
 interface Links {
   client?: string;
@@ -7,10 +8,10 @@ interface Links {
   live?: string;
 }
 
-interface Technology {
-  frontend?: { name: string; icon: StaticImageData }[];
-  backend?: { name: string; icon: StaticImageData }[];
-  database?: { name: string; icon: StaticImageData }[];
+// ✅ Define TypeScript Interfaces
+interface TechnologyCategory {
+  title: string;
+  skills: { name: string; icon: StaticImageData }[];
 }
 
 interface PROJECTCARD {
@@ -18,7 +19,8 @@ interface PROJECTCARD {
   title: string;
   image: StaticImageData[];
   description: string;
-  technology: Technology;
+  shortDescription: string;
+  technology: TechnologyCategory[];
   links?: Links;
 }
 
@@ -50,37 +52,31 @@ const ProjectCard: React.FC<{ project: PROJECTCARD }> = ({ project }) => {
         {/* Project Description */}
         <div className="pt-1 flex flex-col px-2">
           <p className="text-dr-text font-semibold text-sm capitalize">
-            {project.description.slice(0, 70)}...
+            {project.shortDescription.slice(0, 70)}...
           </p>
 
-          {/* Dynamic Skill Rendering */}
+          {/* ✅ Corrected Dynamic Skill Rendering */}
           <div className="py-1">
-            {Object.entries(project.technology).map(
-              ([category, techList], index) => (
-                <p
-                  key={index}
-                  className="text-dr-text font-bold text-base capitalize flex items-center gap-2"
-                >
-                  <span>{category}</span>:
-                  {techList?.map(
-                    (
-                      list: { name: string; icon: StaticImageData },
-                      i: number
-                    ) => (
-                      <span key={i}>{list.name}</span>
-                    )
-                  )}
-                </p>
-              )
-            )}
+            {project.technology.map((category, index) => (
+              <p
+                key={index}
+                className="text-dr-text font-bold text-base capitalize flex items-center gap-2"
+              >
+                <span>{category.title.split(" ")[0]}</span>:{" "}
+                {/* Display category title */}
+                {category.skills.map((skill, i) => (
+                  <span key={i}>{skill.name}</span> // Display skill name
+                ))}
+              </p>
+            ))}
           </div>
         </div>
       </div>
 
       {/* Project Title */}
       <div className="w-full h-full flex justify-center items-end">
-        <h2 className="text-dr-text font-bold text-lg pb-2 capitalize dark:text-lg-text">
-          {project.title}
+        <h2 className="text-dr-text font-bold text-lg pb-2 first-letter:uppercase dark:text-lg-text">
+          <AnimatedCharacters text={project.title} />
         </h2>
       </div>
     </div>

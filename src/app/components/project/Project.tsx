@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import AnimatedBtn from "../share/AnimatedBtn";
 import AnimeDivider from "../share/AnimeDivider";
@@ -9,23 +10,21 @@ import demo1 from "@/assets/demo1.png";
 import demo2 from "@/assets/demo2.png";
 import demo4 from "@/assets/demo4.png";
 import { StaticImageData } from "next/image";
+
+// ✅ Import Icons Correctly
 import html from "../../../../public/icons/icons8-html-480.png";
 import css from "../../../../public/icons/icons8-css3-480.png";
 import js from "../../../../public/icons/icons8-javascript-480.png";
-
 import tailwind from "../../../../public/icons/icons8-tailwindcss-480.png";
 import express from "../../../../public/icons/icons8-express-js-500.png";
-
 import node from "../../../../public/icons/icons8-nodejs-480.png";
-
 import mongodb from "../../../../public/icons/mongodb.png";
 import react from "../../../../public/icons/icons8-react-480.png";
 
 // ✅ Define TypeScript Interfaces
-interface Technology {
-  frontend?: { name: string; icon: StaticImageData }[];
-  backend?: { name: string; icon: StaticImageData }[];
-  database?: { name: string; icon: StaticImageData }[];
+interface TechnologyCategory {
+  title: string;
+  skills: { name: string; icon: StaticImageData }[];
 }
 
 interface Links {
@@ -39,7 +38,8 @@ interface Project {
   title: string;
   image: StaticImageData[];
   description: string;
-  technology: Technology;
+  shortDescription: string;
+  technology: TechnologyCategory[];
   links: Links;
 }
 
@@ -49,15 +49,20 @@ export const projects: Project[] = [
     id: 1,
     title: "TVS - Shop Website",
     image: [demo],
+    shortDescription:
+      "Excited to share my latest project: This product has used HTML, CSS, CSS framework Tailwind CSS, and Vanilla JavaScript.",
     description:
       "Excited to share my latest project: This product has used HTML, CSS, CSS framework Tailwind CSS, and Vanilla JavaScript. This website is fully responsive for tablet and mobile screens.",
-    technology: {
-      frontend: [
-        { name: "HTML", icon: html },
-        { name: "CSS", icon: css },
-        { name: "JavaScript", icon: js },
-      ],
-    },
+    technology: [
+      {
+        title: "Frontend Technology",
+        skills: [
+          { name: "HTML", icon: html },
+          { name: "CSS", icon: css },
+          { name: "JavaScript", icon: js },
+        ],
+      },
+    ],
     links: {
       client: "",
       server: "",
@@ -68,52 +73,40 @@ export const projects: Project[] = [
     id: 2,
     title: "Camera - Ecommerce Shop",
     image: [demo1, demo1, demo4],
+    shortDescription:
+      "Excited to share my latest project: This product has used React, CSS, Tailwind, Node.js, Express, and MongoDB.",
     description: `<p>
     <span style="font-size: 18px;">Quill Rich Text Editor</span>
 </p>
-<p>
-    <br>
-</p>
 <p>Quill is a free,
-    <a href="https://github.com/quilljs/quill/" target="_blank">open source</a>WYSIWYG editor built for the modern web. With its
-    <a href="http://quilljs.com/docs/modules/" target="_blank">extensible architecture</a>and a
-    <a href="http://quilljs.com/docs/api/" target="_blank">expressive API</a>you can completely customize it to fulfill your needs. Some built in features include:</p>
-<p>
-    <br>
-</p>
+    <a href="https://github.com/quilljs/quill/" target="_blank">open source</a> WYSIWYG editor built for the modern web.</p>
+<p>Some built-in features include:</p>
 <ul>
     <li>Fast and lightweight</li>
     <li>Semantic markup</li>
-    <li>Standardized HTML between browsers</li>
-    <li>Cross browser support including Chrome, Firefox, Safari, and IE 9+</li>
-</ul>
-<p>
-    <br>
-</p>
-<p>
-    <span style="font-size: 18px;">Downloads</span>
-</p>
-<p>
-    <br>
-</p>
-<ul>
-    <li>
-        <a href="https://quilljs.com" target="_blank">Quill.js</a>, the free, open source WYSIWYG editor</li>
-    <li>
-        <a href="https://zenoamaro.github.io/react-quill" target="_blank">React-quill</a>, a React component that wraps Quill.js</li>
+    <li>Cross-browser support</li>
 </ul>`,
-    technology: {
-      frontend: [
-        { name: "React", icon: react },
-        { name: "CSS", icon: css },
-        { name: "JavaScript", icon: js },
-      ],
-      backend: [
-        { name: "Node.js", icon: node },
-        { name: "Express", icon: express },
-      ],
-      database: [{ name: "MongoDB", icon: mongodb }],
-    },
+    technology: [
+      {
+        title: "Frontend Technology",
+        skills: [
+          { name: "React", icon: react },
+          { name: "CSS", icon: css },
+          { name: "JavaScript", icon: js },
+        ],
+      },
+      {
+        title: "Backend Technology",
+        skills: [
+          { name: "Node.js", icon: node },
+          { name: "Express", icon: express },
+        ],
+      },
+      {
+        title: "Database",
+        skills: [{ name: "MongoDB", icon: mongodb }],
+      },
+    ],
     links: {
       client: "https://github.com/abedinwahid9",
       server: "",
@@ -124,19 +117,30 @@ export const projects: Project[] = [
     id: 3,
     title: "MERN Project | Tailwind CSS",
     image: [demo2],
+    shortDescription:
+      "Excited to share my latest project: This product has used React, Tailwind, Node.js, Express, and MongoDB.",
     description:
-      "This innovative platform is crafted using cutting-edge technologies such as MUI, React, Node.js, Express, and MongoDB. Our goal is to provide a seamless and user-friendly experience for individuals seeking their dream homes.",
-    technology: {
-      frontend: [
-        { name: "React", icon: react },
-        { name: "Tailwind CSS", icon: tailwind },
-      ],
-      backend: [
-        { name: "Node.js", icon: node },
-        { name: "Express", icon: express },
-      ],
-      database: [{ name: "MongoDB", icon: mongodb }],
-    },
+      "This innovative platform is crafted using cutting-edge technologies such as MUI, React, Node.js, Express, and MongoDB.",
+    technology: [
+      {
+        title: "Frontend Technology",
+        skills: [
+          { name: "React", icon: react },
+          { name: "Tailwind CSS", icon: tailwind },
+        ],
+      },
+      {
+        title: "Backend Technology",
+        skills: [
+          { name: "Node.js", icon: node },
+          { name: "Express", icon: express },
+        ],
+      },
+      {
+        title: "Database",
+        skills: [{ name: "MongoDB", icon: mongodb }],
+      },
+    ],
     links: {
       client: "https://github.com/abedinwahid9",
       server: "",
