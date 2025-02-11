@@ -5,7 +5,10 @@ import { motion, useInView, Variants } from "framer-motion";
 // Wrapper component to prevent word breaks
 const Wrapper: React.FC<{ children: ReactNode }> = ({ children }) => {
   return (
-    <span style={{ display: "inline-flex", overflow: "hidden" }}>
+    <span
+      className="upper_case"
+      style={{ display: "inline-flex", overflow: "hidden" }}
+    >
       {children}
     </span>
   );

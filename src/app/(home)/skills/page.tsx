@@ -45,21 +45,21 @@ const page = () => {
       skills: [{ title: "javascript", icon: js }],
     },
     {
-      category: "back end technology",
+      category: "Back End Technology",
       skills: [
         { title: "express js", icon: express },
         { title: "node js", icon: node },
       ],
     },
     {
-      category: "database",
+      category: "Database",
       skills: [
         { title: "mongodb", icon: mongodb },
         { title: "mongoose", icon: mongoose },
       ],
     },
     {
-      category: "ui ux",
+      category: "Ui Ux",
       skills: [
         { title: "figma", icon: figma },
         { title: "photo shop", icon: photoshop },
@@ -67,7 +67,7 @@ const page = () => {
       ],
     },
     {
-      category: "others",
+      category: "Others",
       skills: [
         { title: "redux", icon: redux },
         { title: "npm", icon: npm },
@@ -127,7 +127,7 @@ const page = () => {
       <section className="py-5">
         <div className="flex justify-center items-center gap-3">
           <GrCertificate className="w-8 h-8 dark:text-lg-text text-dr-text" />
-          <Title title={`certificatioN `} />
+          <Title title={`CertificatioN `} />
           <GrCertificate className="w-8 h-8 dark:text-lg-text text-dr-text" />
         </div>
         <div className="md:py-8 py-5 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4">
