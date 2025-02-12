@@ -34,7 +34,7 @@ const ProjectCard: React.FC<{ project: PROJECTCARD }> = ({ project }) => {
 
       {/* Main Card */}
       <div
-        className={`h-[350px] w-[320px] bg-gradient-to-bl from-lg-button to-dr-link backdrop-blur-3xl border-dr-link border-2 absolute p-1 top-3 rounded-2xl drop-shadow-2xl shadow-[inset_0px_0px_32px_-15px_rgba(0,_0,_0,_5)] ${style.anim_card}`}
+        className={`h-[350px] w-[320px] overflow-hidden bg-gradient-to-bl from-lg-button to-dr-link backdrop-blur-3xl border-dr-link border-2 absolute p-1 top-3 rounded-2xl drop-shadow-2xl shadow-[inset_0px_0px_32px_-15px_rgba(0,_0,_0,_5)] ${style.anim_card}`}
       >
         {/* Project Image */}
         {project.image.length > 0 && (
@@ -56,16 +56,25 @@ const ProjectCard: React.FC<{ project: PROJECTCARD }> = ({ project }) => {
           </p>
 
           {/* ✅ Corrected Dynamic Skill Rendering */}
-          <div className="py-1">
+          <div className="py-1 flex gap-1 flex-col">
             {project.technology.map((category, index) => (
               <p
                 key={index}
                 className="text-dr-text font-bold text-base capitalize flex items-center gap-2"
               >
-                <span>{category.title.split(" ")[0]}</span>:{" "}
-                {/* Display category title */}
+                <span className="bg-lg-secondary/15 px-2 rounded-md shadow-2xl">
+                  {category.title.split(" ").slice(0, 2).join(" ")}
+                </span>
+                : {/* Display category title */}
                 {category.skills.map((skill, i) => (
-                  <span key={i}>{skill.name}</span> // Display skill name
+                  <Image
+                    className="shadow-2xl shadow-black"
+                    key={i}
+                    src={skill.icon}
+                    alt={skill.name}
+                    width={25}
+                    height={25}
+                  />
                 ))}
               </p>
             ))}

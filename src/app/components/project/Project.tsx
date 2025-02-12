@@ -13,13 +13,14 @@ import { StaticImageData } from "next/image";
 
 // ✅ Import Icons Correctly
 import html from "../../../../public/icons/icons8-html-480.png";
-import css from "../../../../public/icons/icons8-css3-480.png";
 import js from "../../../../public/icons/icons8-javascript-480.png";
 import tailwind from "../../../../public/icons/icons8-tailwindcss-480.png";
 import express from "../../../../public/icons/icons8-express-js-500.png";
 import node from "../../../../public/icons/icons8-nodejs-480.png";
 import mongodb from "../../../../public/icons/mongodb.png";
 import react from "../../../../public/icons/icons8-react-480.png";
+import mui from "../../../../public/icons/mui.png";
+import mongoose from "../../../../public/icons/icons8-mongoose-480.png";
 
 // ✅ Define TypeScript Interfaces
 interface TechnologyCategory {
@@ -47,6 +48,122 @@ interface Project {
 export const projects: Project[] = [
   {
     id: 1,
+    title: "Camera shop | E-commerce",
+    image: [demo2],
+    shortDescription: "This is multi vender e-commerce web application",
+    description: `This is multi vender e-commerce web application. This project has used latest technology react, tailwind css, node.js, express.js, mongodb, mongoose, react-hook-form, framer-motion, firebase, axios etc. This project has followed MVC architecture. there is used multi vendor like as admin, seller and buyer. Also there is inventory management system. 
+      
+
+      Features:
+      1. Seller: Create Project, add product, delete, update all project. He check his product sales, buyer details, monthly sales report, manage all project inventory. also here has if he want specific product will not sales, he can off.
+      
+      2. Admin: Manage all user approval, block, buyer to seller. product approval, all data.
+
+      3. Buyer: Buy all product, add wishlist, check buy product report etc.
+
+
+      `,
+    technology: [
+      {
+        title: "Front end Technology",
+        skills: [
+          { name: "React", icon: react },
+          { name: "Tailwind CSS", icon: tailwind },
+        ],
+      },
+      {
+        title: "Back end Technology",
+        skills: [
+          { name: "Node.js", icon: node },
+          { name: "Express.js", icon: express },
+          { name: "Mongoose", icon: mongoose },
+        ],
+      },
+      {
+        title: "Database",
+        skills: [{ name: "MongoDB", icon: mongodb }],
+      },
+    ],
+    links: {
+      client: "https://github.com/abedinwahid9/camera-shop-clients",
+      server: "https://github.com/abedinwahid9/camera-shop-server",
+      live: "https://camerashopbd.netlify.app",
+    },
+  },
+  {
+    id: 2,
+    title: "MERN project | MUI",
+    image: [demo1, demo1, demo4],
+    shortDescription:
+      "Excited to share my latest project: This product has used React, CSS, Tailwind, Node.js, Express, and MongoDB.",
+    description: `🏡 Welcome to the Harbor Homes Real Estate website! 🏡
+
+This innovative platform is crafted using cutting-edge technologies such as MUI, React, Node.js, Express, and MongoDB. Our goal is to provide a seamless and user-friendly experience for individuals seeking their dream homes.
+
+🌟 **Features:**
+
+1. **Login & Sign Up with Password Validation:**
+- Users can securely log in or sign up.
+- Passwords undergo thorough validation checks, ensuring robust security.
+- Clear notifications guide users through any incorrect password attempts.
+
+2. **Product Management:**
+- Exclusive to clients, the platform empowers them to add and update property listings.
+- Informative toast messages celebrate successful additions or updates, enhancing the user experience.
+
+3. **Shopping Cart:**
+- Accessible to logged-in clients, the shopping cart feature provides a personalized property selection experience.
+- Clients can easily view and remove items from their property wishlist.
+
+4. **User Profile:**
+- Users gain insight into their personal data, fostering a tailored experience.
+- Personal information is easily updatable or deletable, putting control in the hands of the user.
+
+🔧 **Technologies Used:**
+
+**Frontend:**
+- React
+- Material-UI (MUI)
+
+**Backend:**
+- Node.js
+- Express
+
+**Database:**
+- MongoDB
+
+🌐 **Links:**
+Stay connected with us on our exciting journey in real estate technology!
+
+`,
+    technology: [
+      {
+        title: "Front end Technology",
+        skills: [
+          { name: "react", icon: react },
+          { name: "mui", icon: mui },
+        ],
+      },
+      {
+        title: "Back end Technology",
+        skills: [
+          { name: "Node.js", icon: node },
+          { name: "Express", icon: express },
+        ],
+      },
+      {
+        title: "Database",
+        skills: [{ name: "MongoDB", icon: mongodb }],
+      },
+    ],
+    links: {
+      client: "https://github.com/abedinwahid9/real-state-clients",
+      server: "https://github.com/abedinwahid9/real-state-server",
+      live: "https://harborhomes.netlify.app",
+    },
+  },
+  {
+    id: 3,
     title: "TVS - Shop Website",
     image: [demo],
     shortDescription:
@@ -55,96 +172,18 @@ export const projects: Project[] = [
       "Excited to share my latest project: This product has used HTML, CSS, CSS framework Tailwind CSS, and Vanilla JavaScript. This website is fully responsive for tablet and mobile screens.",
     technology: [
       {
-        title: "Frontend Technology",
+        title: "Front end Technology",
         skills: [
           { name: "HTML", icon: html },
-          { name: "CSS", icon: css },
-          { name: "JavaScript", icon: js },
+          { name: "TailwindCSS", icon: tailwind },
+          { name: "Javascript", icon: js },
         ],
       },
     ],
     links: {
-      client: "",
-      server: "",
-      live: "",
-    },
-  },
-  {
-    id: 2,
-    title: "Camera - Ecommerce Shop",
-    image: [demo1, demo1, demo4],
-    shortDescription:
-      "Excited to share my latest project: This product has used React, CSS, Tailwind, Node.js, Express, and MongoDB.",
-    description: `<p>
-    <span style="font-size: 18px;">Quill Rich Text Editor</span>
-</p>
-<p>Quill is a free,
-    <a href="https://github.com/quilljs/quill/" target="_blank">open source</a> WYSIWYG editor built for the modern web.</p>
-<p>Some built-in features include:</p>
-<ul>
-    <li>Fast and lightweight</li>
-    <li>Semantic markup</li>
-    <li>Cross-browser support</li>
-</ul>`,
-    technology: [
-      {
-        title: "Frontend Technology",
-        skills: [
-          { name: "React", icon: react },
-          { name: "CSS", icon: css },
-          { name: "JavaScript", icon: js },
-        ],
-      },
-      {
-        title: "Backend Technology",
-        skills: [
-          { name: "Node.js", icon: node },
-          { name: "Express", icon: express },
-        ],
-      },
-      {
-        title: "Database",
-        skills: [{ name: "MongoDB", icon: mongodb }],
-      },
-    ],
-    links: {
-      client: "https://github.com/abedinwahid9",
-      server: "",
-      live: "",
-    },
-  },
-  {
-    id: 3,
-    title: "MERN Project | Tailwind CSS",
-    image: [demo2],
-    shortDescription:
-      "Excited to share my latest project: This product has used React, Tailwind, Node.js, Express, and MongoDB.",
-    description:
-      "This innovative platform is crafted using cutting-edge technologies such as MUI, React, Node.js, Express, and MongoDB.",
-    technology: [
-      {
-        title: "Frontend Technology",
-        skills: [
-          { name: "React", icon: react },
-          { name: "Tailwind CSS", icon: tailwind },
-        ],
-      },
-      {
-        title: "Backend Technology",
-        skills: [
-          { name: "Node.js", icon: node },
-          { name: "Express", icon: express },
-        ],
-      },
-      {
-        title: "Database",
-        skills: [{ name: "MongoDB", icon: mongodb }],
-      },
-    ],
-    links: {
-      client: "https://github.com/abedinwahid9",
-      server: "",
-      live: "",
+      client: "https://github.com/abedinwahid9/tvs",
+      server: "#",
+      live: "https://my-bike.netlify.app",
     },
   },
 ];
