@@ -10,10 +10,14 @@ import { CiCoffeeCup } from "react-icons/ci";
 import { FaHandshake, FaMailBulk } from "react-icons/fa";
 import { FiTrendingUp } from "react-icons/fi";
 import { LuBookOpenText } from "react-icons/lu";
-import html from "../../../../public/icons/icons8-html-480.png";
+
 import CircleAnim from "@/app/components/share/CircleAnim";
 import AnimeDivider from "@/app/components/share/AnimeDivider";
 import AnimatedCharacters from "@/app/components/share/AnimatedCharacters";
+import tailwind from "../../../../public/icons/icons8-tailwindcss-480.png";
+import redux from "../../../../public/icons/icons8-redux-480.png";
+import next from "../../../../public/icons/nextjs-icon.png";
+import node from "../../../../public/icons/icons8-nodejs-480.png";
 
 export const metadata = DynamicMetadata({
   page: "About-me",
@@ -31,6 +35,8 @@ const page = () => {
     "The Journey of a Self-Learner",
     "Who Is Abedin Wahid ?",
   ];
+
+  const icons = [tailwind, redux, next, node];
 
   const personalText: PersonalText[] = [
     {
@@ -76,8 +82,8 @@ const page = () => {
 
             {/* Rotating Icons */}
             <div className="w-full  h-full absolute -top-10 flex justify-center items-center z-10">
-              {Array.from({ length: 4 }).map((_, index) => (
-                <CircleAnim img={html} key={index} index={index} />
+              {icons.map((icon, index) => (
+                <CircleAnim img={icon} key={index} index={index} />
               ))}
             </div>
           </div>

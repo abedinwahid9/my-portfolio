@@ -60,7 +60,7 @@ const CircleAnim = ({
       variants={iconVariants}
     >
       <Image
-        className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24"
+        className="w-16 h-16 md:w-20 md:h-20 "
         width={96}
         height={96}
         src={img}
