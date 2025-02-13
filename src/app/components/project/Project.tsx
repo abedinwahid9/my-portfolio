@@ -5,12 +5,7 @@ import AnimeDivider from "../share/AnimeDivider";
 import ProjectCard from "../share/ProjectCard/ProjectCard";
 import Title from "../share/Title";
 import ArrowSvgAni from "../svg/ArrowSvgAni";
-import demo from "@/assets/demo.png";
-import demo1 from "@/assets/demo1.png";
-import demo2 from "@/assets/demo2.png";
-import demo4 from "@/assets/demo4.png";
 import { StaticImageData } from "next/image";
-
 // ✅ Import Icons Correctly
 import html from "../../../../public/icons/icons8-html-480.png";
 import js from "../../../../public/icons/icons8-javascript-480.png";
@@ -21,6 +16,21 @@ import mongodb from "../../../../public/icons/mongodb.png";
 import react from "../../../../public/icons/icons8-react-480.png";
 import mui from "../../../../public/icons/mui.png";
 import mongoose from "../../../../public/icons/icons8-mongoose-480.png";
+import realS1 from "@/assets/Projects/realS1.png";
+import realS2 from "@/assets/Projects/reals2.png";
+import realS3 from "@/assets/Projects/reals3.jpg";
+import realS4 from "@/assets/Projects/reals4.jpg";
+import realS5 from "@/assets/Projects/reals5.png";
+import realS6 from "@/assets/Projects/real6.png";
+import tvs1 from "@/assets/Projects/tvs1.jpg";
+import tvs2 from "@/assets/Projects/tvs2.jpg";
+import tvs3 from "@/assets/Projects/tvs3.jpg";
+import tvs4 from "@/assets/Projects/tvs4.jpg";
+import camera1 from "@/assets/Projects/camera1.png";
+import camera2 from "@/assets/Projects/cemera2.png";
+import camera3 from "@/assets/Projects/camera3.png";
+import camera4 from "@/assets/Projects/camera4.png";
+import camera5 from "@/assets/Projects/camera5.png";
 
 // ✅ Define TypeScript Interfaces
 interface TechnologyCategory {
@@ -49,7 +59,7 @@ export const projects: Project[] = [
   {
     id: 1,
     title: "Camera shop | E-commerce",
-    image: [demo2],
+    image: [camera1, camera2, camera3, camera4, camera5],
     shortDescription: "This is multi vender e-commerce web application",
     description: `This is multi vender e-commerce web application. This project has used latest technology react, tailwind css, node.js, express.js, mongodb, mongoose, react-hook-form, framer-motion, firebase, axios etc. This project has followed MVC architecture. there is used multi vendor like as admin, seller and buyer. Also there is inventory management system. 
       
@@ -93,7 +103,7 @@ export const projects: Project[] = [
   {
     id: 2,
     title: "MERN project | MUI",
-    image: [demo1, demo1, demo4],
+    image: [realS1, realS2, realS3, realS4, realS5, realS6],
     shortDescription:
       "Excited to share my latest project: This product has used React, CSS, Tailwind, Node.js, Express, and MongoDB.",
     description: `🏡 Welcome to the Harbor Homes Real Estate website! 🏡
@@ -165,7 +175,7 @@ Stay connected with us on our exciting journey in real estate technology!
   {
     id: 3,
     title: "TVS - Shop Website",
-    image: [demo],
+    image: [tvs1, tvs2, tvs3, tvs4],
     shortDescription:
       "Excited to share my latest project: This product has used HTML, CSS, CSS framework Tailwind CSS, and Vanilla JavaScript.",
     description:

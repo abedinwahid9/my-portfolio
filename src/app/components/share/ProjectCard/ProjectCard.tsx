@@ -40,11 +40,10 @@ const ProjectCard: React.FC<{ project: PROJECTCARD }> = ({ project }) => {
         {project.image.length > 0 && (
           <div className="relative w-full h-3/5">
             <Image
-              className="rounded-t-xl object-cover"
+              className="rounded-t-xl object-fill"
               src={project.image[0]}
               alt={project.title}
               fill
-              sizes="100vw"
             />
           </div>
         )}
@@ -74,6 +73,7 @@ const ProjectCard: React.FC<{ project: PROJECTCARD }> = ({ project }) => {
                     alt={skill.name}
                     width={25}
                     height={25}
+                    layout="cover"
                   />
                 ))}
               </p>
