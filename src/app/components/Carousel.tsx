@@ -4,6 +4,9 @@ import { motion, AnimatePresence, Variants, PanInfo } from "framer-motion";
 import { wrap } from "popmotion";
 import Image, { StaticImageData } from "next/image";
 
+import ArrowSvgAni from "./svg/ArrowSvgAni";
+import BackArrowSvgAni from "./svg/BackArrowSvgAni";
+
 const sliderVariants: Variants = {
   incoming: (direction: number) => ({
     x: direction > 0 ? "100%" : "-100%",
@@ -82,17 +85,17 @@ const Carousel: React.FC<IMAGE> = ({ IMAGES }) => {
 
       {/* Navigation Buttons */}
       <div className="mt-4 flex gap-4">
-        <button
+        <div
           onClick={() => swipeToImage(-1)}
-          className="px-4 py-2 bg-gray-800 text-white rounded"
+          className="px-4 py-2 bg-dr-button dark:bg-lg-button  rounded-full"
         >
-          PREV
-        </button>
+          <BackArrowSvgAni />
+        </div>
         <button
           onClick={() => swipeToImage(1)}
-          className="px-4 py-2 bg-gray-800 text-white rounded"
+          className="px-4 py-2 bg-dr-button text-lg-text dark:bg-lg-button  rounded-full"
         >
-          NEXT
+          <ArrowSvgAni />
         </button>
       </div>
 

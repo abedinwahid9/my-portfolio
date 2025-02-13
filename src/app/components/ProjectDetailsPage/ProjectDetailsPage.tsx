@@ -7,6 +7,9 @@ import TextArea from "../share/TextArea";
 import SkillCard from "../share/SkillCard";
 import AnimatedBtn from "../share/AnimatedBtn";
 import Carousel from "../Carousel";
+import BackArrowSvgAni from "../svg/BackArrowSvgAni";
+import GithubSvgAni from "../svg/GithubSvgAni";
+import LiveSvgAni from "../svg/LiveSvgAni";
 
 // ✅ Define Proper TypeScript Interfaces
 interface TechnologyCategory {
@@ -54,7 +57,13 @@ const ProjectDetailsPage: React.FC = () => {
           <Title title={project.title} />
         </div>
         <div className="md:w-1/3 w-full">
-          <AnimatedBtn href="/projects" title="projects" width="w-full" show />
+          <AnimatedBtn
+            icon={<BackArrowSvgAni />}
+            href="/projects"
+            title="projects"
+            width="w-full"
+            show
+          />
         </div>
       </div>
 
@@ -90,6 +99,7 @@ const ProjectDetailsPage: React.FC = () => {
               width="w-full"
               href={link}
               show
+              icon={title === "live" ? <LiveSvgAni /> : <GithubSvgAni />}
             />
           ))}
         </div>
