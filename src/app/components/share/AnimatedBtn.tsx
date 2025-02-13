@@ -6,12 +6,12 @@ import { useState } from "react";
 import Link from "next/link";
 
 // Props for the Animated Button component
-interface BtnProps {
+interface BtnProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   title: string;
   width: string;
   icon?: React.ReactNode; // Optional React node for an icon
   show?: boolean; // Optional boolean to control the shadow display
-  href?: string | URL | undefined;
+  href?: string | undefined;
 }
 
 const AnimatedBtn: React.FC<BtnProps> = ({
@@ -20,6 +20,7 @@ const AnimatedBtn: React.FC<BtnProps> = ({
   icon,
   show,
   href,
+  ...props
 }) => {
   const textSplit: string[] = title?.split(""); // Split the title into an array of characters
   const [hover, setHover] = useState<boolean>(false);
@@ -54,7 +55,11 @@ const AnimatedBtn: React.FC<BtnProps> = ({
   };
 
   return (
-    <Link href={href || "#"} className={`flex flex-col ${width} h-full gap-2`}>
+    <Link
+      href={href || "#"}
+      className={`flex flex-col ${width} h-full gap-2`}
+      {...props}
+    >
       {/* Animated button with shadow effect */}
       <motion.button
         variants={btnVariants}

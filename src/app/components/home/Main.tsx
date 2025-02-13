@@ -131,7 +131,8 @@ const Main: React.FC = () => {
               width="md:w-2/3 w-1/2"
               icon={<CloudDownloadIcon />}
               show={true}
-              href="../../../assets/cv_of_abedin_wahid.pdf"
+              href="/cv_of_abedin_wahid.pdf"
+              target="_blank"
             />
 
             <AnimatedBtn
