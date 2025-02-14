@@ -62,6 +62,7 @@ const AnimatedBtn: React.FC<BtnProps> = ({
     >
       {/* Animated button with shadow effect */}
       <motion.button
+        whileTap={{ scale: 0.95, transition: { duration: 0.5 } }}
         variants={btnVariants}
         initial="stop"
         animate="start"

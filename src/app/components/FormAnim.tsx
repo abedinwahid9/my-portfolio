@@ -30,12 +30,13 @@ const FormAnim = () => {
         <AnimatedInput field="input" title="email" />
         <AnimatedInput field="input" title="number" />
         <AnimatedInput field="textarea" title="comment" />
-        <button
+        <motion.button
+          whileTap={{ scale: 0.98, transition: { duration: 0.5 } }}
           type="submit"
           className="w-full bg-dr-button py-3 text-lg font-semibold text-dr-text rounded-br-3xl"
         >
           Let’s Talk
-        </button>
+        </motion.button>
       </motion.form>
     </div>
   );
