@@ -12,7 +12,7 @@ export default function RootLayout({
       <body
         className={`${playfairDisplay?.variable || ""} ${
           lato?.className || ""
-        }  w-full bg-gradient-to-tr dark:from-lg-secondary from-dr-button dark:to-lg-primary to-dr-primary to-45% bg-no-repeat`}
+        }  w-full bg-gradient-to-tr dark:from-lg-secondary from-dr-button dark:to-lg-primary to-dr-primary to-45% bg-no-repeat `}
       >
         <ThemeProvider attribute="data-mode" defaultTheme="system" enableSystem>
           {children}

@@ -13,8 +13,13 @@ interface SKILLCARD {
 const SkillCard: FC<SKILLCARD> = ({ title, img, key }) => {
   return (
     <motion.div
+      drag
+      dragDirectionLock
+      dragConstraints={{ top: 0, right: 0, bottom: 0, left: 0 }}
+      dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
+      dragElastic={0.5}
       key={key}
-      className="md:w-24 w-20 md:h-24 h-20 shadow-[inset_0px_0px_10px_5px_#1E88A8] drop-shadow-2xl flex justify-center items-center flex-col relative overflow-hidden group rounded-2xl"
+      className="md:w-24 w-20 md:h-24 h-20 cursor-grabbing shadow-[inset_0px_0px_10px_5px_#1E88A8] drop-shadow-2xl flex justify-center items-center flex-col relative overflow-hidden group rounded-2xl"
     >
       <motion.div
         initial={{ y: 0 }}
@@ -26,7 +31,7 @@ const SkillCard: FC<SKILLCARD> = ({ title, img, key }) => {
             repeat: Infinity,
           },
         }}
-        className="md:w-10 w-8 md:h-10 h-8 relative z-10"
+        className="md:w-10 w-8 md:h-10 h-8 relative z-10 pointer-events-none"
       >
         <Image
           className="w-full h-full"
