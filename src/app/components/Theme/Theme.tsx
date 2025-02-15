@@ -50,13 +50,20 @@ const MoonIcon = () => (
   </motion.svg>
 );
 
-const Theme: React.FC = () => {
+const Theme: React.FC<{
+  setLogoColor: React.Dispatch<React.SetStateAction<boolean>>;
+}> = ({ setLogoColor }) => {
   const { setTheme, resolvedTheme } = useTheme();
   const [mount, setMount] = useState<boolean>(false);
 
   // Handle theme toggle
   const handleTheme = () => {
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
+    if (resolvedTheme === "dark") {
+      setLogoColor(true);
+    } else {
+      setLogoColor(false);
+    }
   };
 
   useEffect(() => {

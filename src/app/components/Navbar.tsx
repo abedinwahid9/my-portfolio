@@ -2,7 +2,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import logo from "../../../public/assets/logo.png";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import {
@@ -11,8 +10,9 @@ import {
   // navVariants,
   paperVariants,
 } from "./animation/navAllAnimation";
-import { logoVariants } from "./animation/mainLogo";
 import Theme from "./Theme/Theme";
+import darkLogo from "../../assets/logo/awdr.png";
+import lightLogo from "../../assets/logo/awlg.png";
 
 interface NavLink {
   id: number;
@@ -23,6 +23,7 @@ interface NavLink {
 const Navbar = () => {
   const [open, setOpen] = useState<boolean>(false);
   const [bgWhite, setBgWhite] = useState<boolean>(false);
+  const [logoColor, setLogoColor] = useState<boolean>(false);
   const path = usePathname();
   const navLink: NavLink[] = [
     { id: 1, title: "home", link: "/" },
@@ -70,6 +71,21 @@ const Navbar = () => {
     };
   }, []);
 
+  const logoVariants = {
+    default: {
+      y: 0,
+      transition: { duration: 0.5, type: "spring", stiffness: 200 },
+    },
+    active: {
+      y: "-200%",
+      transition: {
+        duration: 0.5,
+        type: "spring",
+        stiffness: 200,
+      },
+    },
+  };
+
   return (
     <header
       className={`py-5 xl:px-10 md:px-5 px-3 sticky top-0 ${
@@ -80,9 +96,8 @@ const Navbar = () => {
     >
       <nav className="max-w-[1440px]  mx-auto flex justify-between items-center overflow-hidden">
         <div className="order-2 md:order-1 flex justify-center items-center gap-4">
-          <Theme />{" "}
+          <Theme setLogoColor={setLogoColor} />
           <div>
-            {" "}
             {/* desktop nav */}
             <ul className="md:flex hidden gap-5 overflow-hidden">
               {navLink?.map(({ id, title, link }) => (
@@ -287,11 +302,16 @@ const Navbar = () => {
 
         <motion.div
           variants={logoVariants}
-          initial="hidden"
-          animate="visible"
-          className="md:order-2 order-1 "
+          initial="default"
+          animate={logoColor ? "active" : "default"}
+          className="md:order-2 order-1 relative"
         >
-          <Image className="w-36 h-full " src={logo} alt="logo" />
+          <Image className="w-36 h-full " src={darkLogo} alt="logo" />
+          <Image
+            className="w-36 h-full absolute translate-y-full"
+            src={lightLogo}
+            alt="logo"
+          />
         </motion.div>
       </nav>
     </header>
