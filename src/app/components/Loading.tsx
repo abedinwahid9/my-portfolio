@@ -12,7 +12,7 @@ const Loading = ({ children }: LayoutProps) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 4000); // 5 seconds
+    }, 3000); // 3 seconds
 
     return () => {
       clearTimeout(timer);
@@ -27,7 +27,7 @@ const Loading = ({ children }: LayoutProps) => {
     visible: {
       pathLength: 1,
       transition: {
-        duration: 4,
+        duration: 3,
       },
     },
   };
