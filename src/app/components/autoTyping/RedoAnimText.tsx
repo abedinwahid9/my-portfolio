@@ -9,7 +9,6 @@ export interface IRedoAnimTextProps {
 
 const RedoAnimText = ({ delay, texts }: IRedoAnimTextProps) => {
   const textIndex = useMotionValue(0);
-
   const baseText = useTransform(textIndex, (latest) => texts[latest] || "");
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
@@ -40,11 +39,10 @@ const RedoAnimText = ({ delay, texts }: IRedoAnimTextProps) => {
         }
       },
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [count, delay, textIndex, texts.length, updatedThisRound]);
 
   return (
-    <motion.span className="font-bold dark:text-lg-text  text-dr-text">
+    <motion.span className="font-bold dark:text-lg-text text-dr-text">
       {displayText}
     </motion.span>
   );
