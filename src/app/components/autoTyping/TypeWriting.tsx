@@ -3,21 +3,6 @@ import { motion } from "framer-motion";
 import CursorBlinker from "./CursorBlinker";
 import RedoAnimText from "./RedoAnimText";
 
-const itemVariants = {
-  hidden: {
-    opacity: 0,
-    y: 15,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.3,
-      ease: "easeOut",
-    },
-  },
-};
-
 const texts = [
   "Code is like humor. Explain it, it’s bad. 😄",
   "Debugging: where the fun never ends! 🐛",
@@ -34,13 +19,10 @@ const texts = [
 const TypeWriting = () => {
   return (
     <motion.div className="flex w-full py-2 select-none items-center justify-center ">
-      <motion.h2
-        variants={itemVariants}
-        className="inline h-full w-full  md:text-lg text-xs text-slate-900"
-      >
+      <h2 className="inline h-full w-full  md:text-lg text-xs text-slate-900">
         <RedoAnimText delay={1} texts={texts} />
         <CursorBlinker />
-      </motion.h2>{" "}
+      </h2>
     </motion.div>
   );
 };
